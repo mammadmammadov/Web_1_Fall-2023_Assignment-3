@@ -2,9 +2,16 @@ export default function Navbar(){
     return <nav className="">
         <a href="/"></a>
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+
+
+            <li>
+            <a href="/flashcard">Flashcards</a>
+            </li>
+
+            <li>
+            <a href="/contact">Contact</a>
+            </li>
+
         </ul>
     </nav>
 }
