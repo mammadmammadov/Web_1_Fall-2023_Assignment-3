@@ -1,9 +1,143 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
+    "flashcards": [{
+      "id": 1,
+      "front": "What is the determinant of a 2x2 matrix [[a, b], [c, d]]?",
+      "back": "ad - bc",
+      "lastModified": "2023-12-15T12:00:00Z",
+      "status": "Learned"
+    },
+    {
+      "id": 2,
+      "front": "What is the sum of the first 100 prime numbers?",
+      "back": "24133",
+      "lastModified": "2023-12-15T12:05:00Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 3,
+      "front": "What is the rank of a matrix?",
+      "back": "The maximum number of linearly independent rows or columns",
+      "lastModified": "2023-12-15T12:10:00Z",
+      "status": "Learned"
+    },
+    {
+      "id": 4,
+      "front": "What is the Euler's totient function, phi(n), used for?",
+      "back": "Counting the number of positive integers up to n that are relatively prime to n",
+      "lastModified": "2023-12-15T12:15:00Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 5,
+      "front": "What is the solution to the system of linear equations: 2x + y = 5, 3x - 2y = 8?",
+      "back": "x = 2, y = 1",
+      "lastModified": "2023-12-15T12:20:00Z",
+      "status": "Learned"
+    },
+    {
+      "id": 6,
+      "front": "What is the fundamental theorem of arithmetic?",
+      "back": "Every integer greater than 1 is either a prime number or can be uniquely factorized into prime numbers",
+      "lastModified": "2023-12-15T12:25:00Z",
+      "status": "Learned"
+    },
+    {
+      "id": 7,
+      "front": "What is the eigenvalue of a matrix?",
+      "back": "A scalar lambda such that the matrix equation (A - λI)x = 0 has non-zero solutions",
+      "lastModified": "2023-12-15T12:30:00Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 8,
+      "front": "What is Fermat's Last Theorem?",
+      "back": "No three positive integers a, b, and c can satisfy the equation a^n + b^n = c^n for any integer value of n greater than 2",
+      "lastModified": "2023-12-15T12:35:00Z",
+      "status": "Learned"
+    },
+    {
+      "id": 9,
+      "front": "What is the inverse of a matrix?",
+      "back": "A matrix that, when multiplied with the original matrix, gives the identity matrix",
+      "lastModified": "2023-12-15T12:40:00Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 10,
+      "front": "What is the Chinese Remainder Theorem used for?",
+      "back": "Finding the solution to a system of simultaneous modular congruences",
+      "lastModified": "2023-12-15T12:45:00Z",
+      "status": "Learned"
+    },
+    {
+      "id": 11,
+      "front": "What is the definition of a prime number?",
+      "back": "A natural number greater than 1 that has no positive divisors other than 1 and itself",
+      "lastModified": "2023-12-15T12:50:00Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 12,
+      "front": "What is the trace of a matrix?",
+      "back": "The sum of the diagonal elements of a square matrix",
+      "lastModified": "2023-12-15T12:55:00Z",
+      "status": "Learned"
+    },
+    {
+      "id": 13,
+      "front": "What is the sum of the first 50 Fibonacci numbers?",
+      "back": "20365011074",
+      "lastModified": "2023-12-15T13:00:00Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 14,
+      "front": "What is the characteristic polynomial of a matrix?",
+      "back": "The polynomial obtained by replacing λ with det(A - λI)",
+      "lastModified": "2023-12-15T13:05:00Z",
+      "status": "Learned"
+    },
+    {
+      "id": 15,
+      "front": "What is the Goldbach Conjecture?",
+      "back": "Every even integer greater than 2 can be expressed as the sum of two prime numbers",
+      "lastModified": "2023-12-15T13:10:00Z",
+      "status": "Learned"
+    },
+    {
+      "id": 16,
+      "front": "What is the cross product of two vectors?",
+      "back": "A vector perpendicular to both vectors with a magnitude equal to the product of their magnitudes and the sine of the angle between them",
+      "lastModified": "2023-12-15T13:15:00Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 17,
+      "front": "What is the significance of the Riemann Hypothesis?",
+      "back": "It is one of the most famous unsolved problems in mathematics, related to the distribution of prime numbers",
+      "lastModified": "2023-12-15T13:20:00Z",
+      "status": "Learned"
+    },
+    {
+      "id": 18,
+      "front": "What is the dot product of two vectors?",
+      "back": "The sum of the products of their corresponding components",
+      "lastModified": "2023-12-15T13:25:00Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 19,
+      "front": "What is the significance of the Twin Prime Conjecture?",
+      "back": "It suggests that there are infinitely many twin primes (pairs of primes with a difference of 2)",
+      "lastModified": "2023-12-15T13:30:00Z",
+      "status": "Learned"
+    },
+    {
+      "id": 20,
+      "front": "What is the identity matrix?",
+      "back": "A square matrix with ones on the main diagonal and zeros elsewhere",
+      "lastModified": "2023-12-15T13:35:00Z",
+      "status": "Learned"
+    }]
+}
+  
