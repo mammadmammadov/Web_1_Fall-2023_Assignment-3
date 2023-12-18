@@ -1,12 +1,11 @@
 import React from "react";
-import { Routes, Route, Router, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./Home";
 import Flashcards from "./Flashcards";
 import Contact from "./Contact";
 import NoPage from "./NoPage";
 import Navbar from "./Navbar";
 import "../assets/App.css";
-import ContactPage from "./ContactPage";
 
 function App() {
   return (

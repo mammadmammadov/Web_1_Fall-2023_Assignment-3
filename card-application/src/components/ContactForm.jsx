@@ -1,60 +1,74 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import "../assets/Contact.css";
+import "../assets/App.css"
+import swal from 'sweetalert';
 
-const ContactForm = ({ onSubmit }) => {
+function ContactForm(){
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    id:'',
+    subject: '',
+    email: '',
+    content: '',
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSubmit(formData);
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+
+    try {
+      // Send the form data to the json-server
+      const response = await fetch('http://localhost:3001/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        swal('Message sent successfully!')
+        console.log('Message sent successfully:', formData);
+
+        // Optionally, you can reset the form after successful submission
+        setFormData({
+          id: '',
+          subject: '',
+          email: '',
+          content: '',
+        });
+      } else {
+        console.error('Error sending message:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Email:
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Message:
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <h1>Contact Page</h1>
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <label>
+          Subject:
+          <input type="text" name="subject" value={formData.subject} onChange={handleChange} />
+        </label>
+        <br />
+        <label>
+          Email:
+          <input type="email" name="email" value={formData.email} onChange={handleChange} />
+        </label>
+        <br />
+        <label>
+          Content:
+          <textarea name="content" value={formData.content} onChange={handleChange} />
+        </label>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   );
 };
 
