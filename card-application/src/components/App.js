@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./Home";
-import Flashcards from "./Flashcards";
-import Contact from "./Contact";
+import FlashcardPage from "./FlashcardPage";
+import ContactForm from "./ContactForm";
 import NoPage from "./NoPage";
 import Navbar from "./Navbar";
 import "../assets/App.css";
@@ -13,8 +13,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/flashcards" element={<Flashcards />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/flashcards" element={<FlashcardPage />} />
+        <Route path="/contact" element={<ContactForm />} />
         <Route path="/*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>

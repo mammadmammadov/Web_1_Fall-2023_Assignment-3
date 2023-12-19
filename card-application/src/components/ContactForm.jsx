@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../assets/Contact.css";
+import "../assets/ContactForm.css";
 import "../assets/App.css"
 import swal from 'sweetalert';
 
@@ -20,7 +20,7 @@ function ContactForm(){
 
     try {
       // Send the form data to the json-server
-      const response = await fetch('http://localhost:3001/messages', {
+      const res = await fetch('http://localhost:3002/messages', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ function ContactForm(){
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
+      if (res.ok) {
         swal('Message sent successfully!')
         console.log('Message sent successfully:', formData);
 
@@ -40,7 +40,7 @@ function ContactForm(){
           content: '',
         });
       } else {
-        console.error('Error sending message:', response.statusText);
+        console.error('Error sending message:', res.statusText);
       }
     } catch (error) {
       console.error('Error sending message:', error);
