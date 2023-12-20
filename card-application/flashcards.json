@@ -4,14 +4,14 @@
         "id": 1,
         "front": "What is the determinant of a 2x2 matrix [[a, b], [c, d]]?",
         "back": "ad - bc",
-        "lastModified": "2023-12-15T12:00:00Z",
+        "lastModified": "2021-12-15T12:00:00Z",
         "status": "Learned"
       },
       {
         "id": 2,
         "front": "What is the sum of the first 100 prime numbers?",
         "back": "24133",
-        "lastModified": "2023-12-15T12:05:00Z",
+        "lastModified": "2022-12-15T12:05:00Z",
         "status": "Want to Learn"
       },
       {
@@ -19,7 +19,7 @@
         "front": "What is the rank of a matrix?",
         "back": "The maximum number of linearly independent rows or columns",
         "lastModified": "2023-12-15T12:10:00Z",
-        "status": "Learned"
+        "status": "Noted"
       },
       {
         "id": 4,
@@ -130,14 +130,14 @@
         "id": 19,
         "front": "What is the significance of the Twin Prime Conjecture?",
         "back": "It suggests that there are infinitely many twin primes (pairs of primes with a difference of 2)",
-        "lastModified": "2023-12-15T13:30:00Z",
+        "lastModified": "2023-12-16T13:30:00Z",
         "status": "Learned"
       },
       {
         "id": 20,
         "front": "What is the identity matrix?",
         "back": "A square matrix with ones on the main diagonal and zeros elsewhere",
-        "lastModified": "2023-12-15T13:35:00Z",
+        "lastModified": "2023-12-15T23:35:00Z",
         "status": "Want to Learn"
       }
     ]

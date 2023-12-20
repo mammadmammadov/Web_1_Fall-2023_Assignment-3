@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import "../assets/FlashcardPage.css";
+import SearchBar from "./SearchBar";
+import FilterMenu from "./FilterMenu";
+import SortMenu from "./SortMenu";
 
 function createCard(card) {
   return (
@@ -16,6 +19,9 @@ function createCard(card) {
 
 function FlashcardPage() {
   const [flashcards, setFlashCards] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterStatus, setFilterStatus] = useState("All");
+  const [sortOption, setSortOption] = useState("lastModified");
 
   const url = `http://localhost:3001/flashcards`;
 
@@ -23,20 +29,52 @@ function FlashcardPage() {
     fetch(url)
       .then((res) => {
         if (!res.ok) {
-          throw new Error(`HTTP error! Status: ${res.status}`);
+          throw new Error(`Connection error! Status: ${res.status}`);
         } else {
           return res.json();
         }
       })
-      .then((data) => setFlashCards(data))
+      .then((data) => {
+        const sortedFlashcards = data.sort(
+          (a, b) => new Date(b.lastModified) - new Date(a.lastModified)
+        );
+        setFlashCards(sortedFlashcards);
+      })
       .catch((error) => console.error("Error fetching data: ", error));
   }, []);
+
+  const sortedAndFilteredFlashcards = flashcards
+    .filter((card) => {
+      const filterCondition =
+        filterStatus === "All" ? true : card.status === filterStatus;
+      return filterCondition;
+    })
+    .filter(
+      (card) =>
+        card.front.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        card.back.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .sort((a, b) => {
+      const comparator =
+        sortOption === "lastModified"
+          ? new Date(b.lastModified) - new Date(a.lastModified)
+          : a.status.localeCompare(b.status);
+
+      return comparator;
+    });
 
   return (
     <div className="grid-container">
       <h1>Flashcards</h1>
+      <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+      <FilterMenu
+        filterStatus={filterStatus}
+        onFilterChange={setFilterStatus}
+      />
+      <SortMenu sortOption={sortOption} onSortChange={setSortOption} />
+
       <ul className="cards-list">
-        {flashcards.map(createCard)}
+        {sortedAndFilteredFlashcards.map(createCard)}
       </ul>
     </div>
   );
