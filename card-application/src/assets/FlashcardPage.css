@@ -37,6 +37,7 @@ h1{
   .card-item:hover {
     background-color: rgb(255, 212, 38);
     transform: scale(1.02);
+    cursor:pointer;
   }
 
   .card-front h3 {

@@ -15,7 +15,7 @@ function Card({ front,back, lastModified, status }) {
 
       onClick={handleClick}
     >
-      <div className="card-inner">
+      <div className="card-data">
         <div className="card-front">
           <h3>{front}</h3>
           <p>{lastModified}</p>
