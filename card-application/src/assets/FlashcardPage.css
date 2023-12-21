@@ -70,5 +70,13 @@ h1{
     display: none;
   }
   
-  /* testing */
+  .search-filter-sort{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+  }
 
+  .no-element{
+    font-family: 'Courier New', Courier, monospace;
+  }

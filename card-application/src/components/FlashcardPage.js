@@ -58,7 +58,7 @@ function FlashcardPage() {
       const comparator =
         sortOption === "lastModified"
           ? new Date(b.lastModified) - new Date(a.lastModified)
-          : a.status.localeCompare(b.status);
+          : new Date(a.lastModified) - new Date(b.lastModified);
 
       return comparator;
     });
@@ -66,16 +66,21 @@ function FlashcardPage() {
   return (
     <div className="grid-container">
       <h1>Flashcards</h1>
-      <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-      <FilterMenu
-        filterStatus={filterStatus}
-        onFilterChange={setFilterStatus}
-      />
-      <SortMenu sortOption={sortOption} onSortChange={setSortOption} />
-
-      <ul className="cards-list">
-        {sortedAndFilteredFlashcards.map(createCard)}
-      </ul>
+      <div className="search-filter-sort">
+        <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+        <FilterMenu
+          filterStatus={filterStatus}
+          onFilterChange={setFilterStatus}
+        />
+        <SortMenu sortOption={sortOption} onSortChange={setSortOption} />
+      </div>
+      {sortedAndFilteredFlashcards.length > 0 ? (
+        <ul className="cards-list">
+          {sortedAndFilteredFlashcards.map(createCard)}
+        </ul>
+      ) : (
+        <h2 class="no-element">No card found</h2>
+      )}
     </div>
   );
 }

@@ -4,7 +4,7 @@
   }
   
   .card-data {
-    transition: transform 0.3s;
+    transition: transform 0.6s;
     transform-style: preserve-3d;
     
   }
@@ -41,6 +41,7 @@
   }
   
   .card-item p {
+    margin-top: 10%;
     font-size: 16px;
     color: #555;
     margin: 0;

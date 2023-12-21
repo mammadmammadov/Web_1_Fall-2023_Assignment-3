@@ -1,8 +1,9 @@
 import React from "react";
+import "../assets/App.css";
 
 function FilterMenu({ filterStatus, onFilterChange }) {
   return (
-    <select
+    <select class="custom-select"
       value={filterStatus}
       onChange={(e) => onFilterChange(e.target.value)}
     >
