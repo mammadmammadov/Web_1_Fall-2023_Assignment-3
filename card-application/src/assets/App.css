@@ -3,7 +3,7 @@ h1{
 }
 
 
-.search-input {
+.add, .search-input {
     padding: 10px;
     border: 2px solid #3498db;
     border-radius: 5px;
@@ -16,7 +16,7 @@ h1{
     border-color: #2ecc71; /* Change the border color on focus */
   }
 
-  .custom-select {
+  .add, .custom-select {
     padding: 10px;
     font-size: 16px;
     border: 2px solid #3498db;
@@ -32,6 +32,12 @@ h1{
   
   .custom-select:focus {
     border-color: #2ecc71; /* Change the border color on focus */
+  }
+
+  .add{
+    margin-left: 10%;
+    width: 100px;
+    font-size: large;
   }
   
   
