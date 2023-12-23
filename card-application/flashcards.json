@@ -107,7 +107,7 @@
     },
     {
       "id": 16,
-      "front": "What is the cross product of two vectors?mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm",
+      "front": "What is the cross product of two vectors?",
       "back": "A vector perpendicular to both vectors with a magnitude equal to the product of their magnitudes and the sine of the angle between them",
       "lastModified": "2023-12-15T13:15:00Z",
       "status": "Want to Learn"
@@ -151,6 +151,80 @@
       "back": "",
       "status": "Want to Learn",
       "id": 30
+    },
+    {
+      "front": "",
+      "back": "",
+      "status": "Want to Learn",
+      "id": 31
+    },
+    {
+      "front": "sssssssssssssssssssssssss\nsssssssssssssss\nssssssssssssss\nssssssssss\nsss\ns\nss\ns\ns\ns\n",
+      "back": "a\na\na\na\na\na\na\na\n",
+      "status": "Want to Learn",
+      "id": 32
+    },
+    {
+      "front": "m",
+      "back": "m",
+      "status": "Learned",
+      "id": 33
+    },
+    {
+      "front": "salam",
+      "back": "sag ol",
+      "status": "Noted",
+      "date": "",
+      "id": 34
+    },
+    {
+      "front": "salam",
+      "back": "salamsa",
+      "status": "Learned",
+      "date": "",
+      "id": 35
+    },
+    {
+      "front": "ddd",
+      "back": "aaa",
+      "status": "Want to Learn",
+      "date": "2023-12-23T17:05:37.689Z",
+      "id": 36
+    },
+    {
+      "front": "en yeni kart",
+      "back": "tes",
+      "status": "Want to Learn",
+      "lastModified": "2023-12-23T17:07:04.685Z",
+      "id": 37
+    },
+    {
+      "front": "en yeni kart 2",
+      "back": "2",
+      "status": "Want to Learn",
+      "lastModified": "2023-12-23T18:31:16.396Z",
+      "id": 38
+    },
+    {
+      "front": "c",
+      "back": "c",
+      "lastModified": "2023-12-23T18:31:16.396Z",
+      "status": "Want to Learn",
+      "id": 39
+    },
+    {
+      "front": "a",
+      "back": "asa",
+      "lastModified": "2023-12-23T18:31:16.396Z",
+      "status": "Want to Learn",
+      "id": 40
+    },
+    {
+      "front": "mammad",
+      "back": ",d",
+      "lastModified": "2023-12-23T18:31:16.396Z",
+      "status": "Want to Learn",
+      "id": 41
     }
   ]
 }

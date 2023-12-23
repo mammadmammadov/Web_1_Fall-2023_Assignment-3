@@ -27,6 +27,7 @@ function FlashcardPage() {
 
   const handleAddCard = async (newCard) => {
     try {
+      
       const res = await fetch('http://localhost:3001/flashcards', {
         method: 'POST',
         headers: {
@@ -39,10 +40,9 @@ function FlashcardPage() {
         throw new Error('Failed to add card');
       }
 
-      // Update the state with the new card
+
       setFlashCards([...flashcards, newCard]);
 
-      // Clear input fields and close the modal
       setNewCard(false);
     } catch (error) {
       console.error('Error adding card:', error);
@@ -107,9 +107,6 @@ function FlashcardPage() {
         onAddCard={handleAddCard}
       />
       </div>
-
-
-
 
       {sortedAndFilteredFlashcards.length >  0 ? (
         <ul className="cards-list">

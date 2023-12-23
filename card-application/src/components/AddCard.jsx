@@ -5,20 +5,18 @@ import "../assets/AddCard.css"
 const AddCard = ({ isOpen, onClose, onAddCard }) => {
   const [front, setFront] = useState('');
   const [back, setBack] = useState('');
-  const [status, setStatus] = useState('Want to Learn'); // Default status value
+  const [status, setStatus] = useState('Want to Learn');
+  const [lastModified, setLastModified] = useState(new Date().toISOString());
 
   const handleAddCard = () => {
-    // Validate input fields if needed
     const newCard = {
       front,
       back,
-      status,
-      // Add other properties like id, lastModified, as needed
+      lastModified,
+      status
     };
-
-    // Call the onAddCard prop to add the card to the UI and JSON file
+    
     onAddCard(newCard);
-    // Clear input fields and close the modal
     setFront('');
     setBack('');
     setStatus('Want to Learn'); // Reset status to default
