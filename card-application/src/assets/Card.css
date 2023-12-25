@@ -1,56 +1,81 @@
+.card-item.flipped .card-data {
+  transform: rotateY(180deg);
   
-  .card-item.flipped .card-data {
-    transform: rotateY(180deg)
-  }
+}
+
+.card-data {
+  transition: transform 0.3s;
+  transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
   
-  .card-data {
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
-    
-  }
-  
-  .card-front,
-  .card-back {
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-  }
-  
-  .card-front {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .card-back {
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 50%;
-    font-size: 20px;
-    font-family: 'Courier New', Courier, monospace; 
-  }
-  
-  .card-item h3 {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .card-item p {
-    margin-top: 10%;
-    font-size: 16px;
-    color: #555;
-    margin: 0;
-  }
+}
+
+.card-front,
+.card-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.card-front h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-front p {
+  margin-top: 10%;
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+
+.card-front .card-buttons {
+  opacity: 0;
+}
+
+.card-front .delete-button:hover {
+  color: white;
+  background-color: rgb(215, 0, 21);
+}
+
+.card-front .edit-button,
+.delete-button {
+  margin-top: 15%;
+  border: none;
+  padding: 8px 12px;
+  margin-right: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 96px;
+  height: 64px;
+}
+
+.card-item:hover .card-buttons {
+  opacity: 1;
+}
 
 
-  
+.card-item.flipped .card-front {
+  display: none;
+}
 
 
+.card-item.flipped .card-back {
+  display:flex;
+}
 
+.card-data .clearfix {
+  clear: both;
+}
 
-  

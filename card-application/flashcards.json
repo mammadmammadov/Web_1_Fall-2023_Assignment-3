@@ -141,90 +141,25 @@
       "status": "Want to Learn"
     },
     {
-      "id": 29,
-      "front": "Psychoneuroendocrinological",
-      "back": "This is a disease related to human psychology, however, it is not that common!",
-      "status": "Noted"
-    },
-    {
-      "front": "",
-      "back": "",
+      "front": "Frontend",
+      "back": "Backend",
+      "lastModified": "2023-12-25T16:39:09.948Z",
       "status": "Want to Learn",
-      "id": 30
+      "id": 21
     },
     {
-      "front": "",
-      "back": "",
-      "status": "Want to Learn",
-      "id": 31
-    },
-    {
-      "front": "sssssssssssssssssssssssss\nsssssssssssssss\nssssssssssssss\nssssssssss\nsss\ns\nss\ns\ns\ns\n",
-      "back": "a\na\na\na\na\na\na\na\n",
-      "status": "Want to Learn",
-      "id": 32
-    },
-    {
-      "front": "m",
-      "back": "m",
-      "status": "Learned",
-      "id": 33
-    },
-    {
-      "front": "salam",
-      "back": "sag ol",
-      "status": "Noted",
-      "date": "",
-      "id": 34
-    },
-    {
-      "front": "salam",
-      "back": "salamsa",
-      "status": "Learned",
-      "date": "",
-      "id": 35
-    },
-    {
-      "front": "ddd",
-      "back": "aaa",
-      "status": "Want to Learn",
-      "date": "2023-12-23T17:05:37.689Z",
-      "id": 36
-    },
-    {
-      "front": "en yeni kart",
-      "back": "tes",
-      "status": "Want to Learn",
-      "lastModified": "2023-12-23T17:07:04.685Z",
-      "id": 37
-    },
-    {
-      "front": "en yeni kart 2",
-      "back": "2",
-      "status": "Want to Learn",
-      "lastModified": "2023-12-23T18:31:16.396Z",
-      "id": 38
-    },
-    {
-      "front": "c",
-      "back": "c",
-      "lastModified": "2023-12-23T18:31:16.396Z",
-      "status": "Want to Learn",
-      "id": 39
-    },
-    {
+      "id": 22,
       "front": "a",
-      "back": "asa",
-      "lastModified": "2023-12-23T18:31:16.396Z",
-      "status": "Want to Learn",
-      "id": 40
+      "back": "c",
+      "lastModified": "2023-12-25T16:39:48.801Z",
+      "status": "Want to Learn"
     },
     {
-      "front": "mammad",
-      "back": ",d",
-      "lastModified": "2023-12-23T18:31:16.396Z",
-      "status": "Want to Learn",
-      "id": 41
+      "id": 23,
+      "front": "note1",
+      "back": "note2",
+      "lastModified": "2023-12-25T16:40:39.220Z",
+      "status": "Noted"
     }
   ]
 }

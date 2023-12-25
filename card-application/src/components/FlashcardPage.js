@@ -23,6 +23,7 @@ function FlashcardPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState("All");
   const [sortOption, setSortOption] = useState("lastModified");
+  
   const [newCard, setNewCard] = useState(false);
 
   const handleAddCard = async (newCard) => {
@@ -39,7 +40,6 @@ function FlashcardPage() {
       if (!res.ok) {
         throw new Error('Failed to add card');
       }
-
 
       setFlashCards([...flashcards, newCard]);
 
@@ -99,6 +99,7 @@ function FlashcardPage() {
           onFilterChange={setFilterStatus}
         />
         <SortMenu sortOption={sortOption} onSortChange={setSortOption} />
+        
         <button className="add" onClick={() => setNewCard(true)}>➕</button>
 
         <AddCard
@@ -109,9 +110,9 @@ function FlashcardPage() {
       </div>
 
       {sortedAndFilteredFlashcards.length >  0 ? (
-        <ul className="cards-list">
+        <div className="cards-list">
           {sortedAndFilteredFlashcards.map(createCard)}
-        </ul>
+        </div>
       ) : (
         <h2 class="no-element">No card found</h2>
       )}

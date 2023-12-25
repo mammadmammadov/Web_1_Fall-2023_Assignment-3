@@ -2,6 +2,8 @@ h1{
     text-align: center;
 }
 
+
+
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -11,6 +13,7 @@ h1{
     margin: 0 auto;
     border: 1px solid #ddd;
     border-radius: 5px;
+    background-color: rgb(235, 235, 240);
   }
   
   .contact-form label {

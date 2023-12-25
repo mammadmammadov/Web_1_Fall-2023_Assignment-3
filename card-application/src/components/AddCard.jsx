@@ -1,22 +1,31 @@
-// AddCard.js
 
 import React, { useState } from 'react';
 import "../assets/AddCard.css"
 const AddCard = ({ isOpen, onClose, onAddCard }) => {
+  const [id, setId] = useState();
   const [front, setFront] = useState('');
   const [back, setBack] = useState('');
   const [status, setStatus] = useState('Want to Learn');
   const [lastModified, setLastModified] = useState(new Date().toISOString());
 
   const handleAddCard = () => {
+
+    if (!front || !back || !status) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
     const newCard = {
+      id,
       front,
       back,
       lastModified,
       status
     };
     
+    setId(id+1);
     onAddCard(newCard);
+    setLastModified(new Date().toISOString());
     setFront('');
     setBack('');
     setStatus('Want to Learn'); // Reset status to default
