@@ -29,7 +29,7 @@
 }
 
 .card-front h3 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -75,7 +75,7 @@
   display:flex;
 }
 
-.card-data .clearfix {
-  clear: both;
-}
+
+
+
 

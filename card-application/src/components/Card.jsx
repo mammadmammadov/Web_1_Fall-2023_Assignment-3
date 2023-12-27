@@ -9,11 +9,16 @@ function convertISOToUserFriendly(
   return dateObj.toLocaleString(undefined, format);
 }
 
-function Card({ front, back, lastModified, status }) {
+function Card({ front, back, lastModified, status, onDelete }) {
   const [isFlipped, setFlipped] = useState(false);
 
   const handleClick = () => {
     setFlipped(!isFlipped);
+  };
+
+  const handleDelete = (event) => {
+    event.stopPropagation();
+    onDelete();
   };
 
   const statusStyle = {
@@ -22,7 +27,7 @@ function Card({ front, back, lastModified, status }) {
   };
 
   const timeStyle = {
-    marginTop: "10%",
+    marginTop: "5%",
   };
 
   return (
@@ -30,19 +35,29 @@ function Card({ front, back, lastModified, status }) {
       className={`card-item ${isFlipped ? "flipped" : ""}`}
       onClick={handleClick}
     >
-    <div class="card-data">
-      <div className="card-front">
-        <h3>{front}</h3>
-        <p style={statusStyle}>{status}</p>
-        <p style={timeStyle}>{convertISOToUserFriendly(lastModified)}</p>
-        <div className="card-buttons">
-          <button className="edit-button">Edit</button>
-          <button className="delete-button">Delete</button>
+      <div class="card-data">
+        <div className="card-front">
+          <h3>{front}</h3>
+          <p style={statusStyle}>{status}</p>
+          <p style={timeStyle}>{convertISOToUserFriendly(lastModified)}</p>
+          <div className="card-buttons">
+            <button
+              onClick={(event) => event.stopPropagation()}
+              className="edit-button"
+            >
+              Edit ✏️
+            </button>
+            <button
+              onClick={handleDelete}
+              className="delete-button"
+            >
+              Delete 🗑️
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="card-back">
-        <h4>{back}</h4>
-      </div>
+        <div className="card-back">
+          <h4>{back}</h4>
+        </div>
       </div>
     </div>
   );

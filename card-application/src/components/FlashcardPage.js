@@ -6,17 +6,6 @@ import FilterMenu from "./FilterMenu";
 import SortMenu from "./SortMenu";
 import AddCard from "./AddCard";
 
-function createCard(card) {
-  return (
-    <Card
-      key={card.id}
-      front={card.front}
-      back={card.back}
-      lastModified={card.lastModified}
-      status={card.status}
-    />
-  );
-}
 
 function FlashcardPage() {
   const [flashcards, setFlashCards] = useState([]);
@@ -25,6 +14,7 @@ function FlashcardPage() {
   const [sortOption, setSortOption] = useState("lastModified");
   
   const [newCard, setNewCard] = useState(false);
+  
 
   const handleAddCard = async (newCard) => {
     try {
@@ -48,6 +38,42 @@ function FlashcardPage() {
       console.error('Error adding card:', error);
     }
   };
+
+  const deleteFlashcard = (id) => {
+
+
+    const remainingFlashcards = flashcards.filter((card) => card.id !== id);
+
+    setFlashCards(remainingFlashcards);
+  
+
+    fetch(`http://localhost:3001/flashcards/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Failed to delete!`);
+        }
+        console.log(`Successfully deleted flashcard!`);
+      })
+      .catch((err) => console.error('Error while deleting', err));
+  };
+
+  function createCard(card) {
+    return (
+      <Card
+        key={card.id}
+        front={card.front}
+        back={card.back}
+        lastModified={card.lastModified}
+        status={card.status}
+        onDelete={() => deleteFlashcard(card.id)}
+      />
+    );
+  }
 
   const url = `http://localhost:3001/flashcards`;
 
