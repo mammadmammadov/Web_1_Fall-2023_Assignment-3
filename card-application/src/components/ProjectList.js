@@ -22,42 +22,6 @@ const projectList = [
       title: "QR Code Generator",
       description: "Description of Project 2.",
       link: "https://github.com/yourusername/project2",
-    },
-    {
-      id: 5,
-      title: "QR Code Generator",
-      description: "Description of Project 2.",
-      link: "https://github.com/yourusername/project2",
-    },
-    {
-      id: 6,
-      title: "QR Code Generator",
-      description: "Description of Project 2.",
-      link: "https://github.com/yourusername/project2",
-    },
-    {
-      id: 7,
-      title: "QR Code Generator",
-      description: "Description of Project 2.",
-      link: "https://github.com/yourusername/project2",
-    },
-    {
-      id: 8,
-      title: "QR Code Generator",
-      description: "Description of Project 2.",
-      link: "https://github.com/yourusername/project2",
-    },
-    {
-      id: 9,
-      title: "QR Code Generator",
-      description: "Description of Project 2.",
-      link: "https://github.com/yourusername/project2",
-    },
-    {
-      id: 10,
-      title: "QR Code Generator",
-      description: "Description of Project 2.",
-      link: "https://github.com/yourusername/project2",
     }
   ];
 

@@ -1,31 +1,38 @@
 {
   "flashcards": [
     {
-      "id": 2,
-      "front": "What is the determinant of a 3x3 matrix?",
-      "back": "a(ei - fh) - b(di - fg) + c(dh - eg)",
-      "lastModified": "2023-12-27T12:00:00Z",
-      "status": "Want to Learn"
-    },
-    {
-      "id": 5,
-      "front": "Explain the concept of diagonalization of a matrix.",
-      "back": "Diagonalization is the process of expressing a square matrix A as the product of three matrices: A = PDP^(-1), where D is a diagonal matrix and P is the matrix of eigenvectors of A.",
-      "lastModified": "2023-12-27T12:00:00Z",
+      "id": 6,
+      "front": "1",
+      "back": "1",
+      "lastModified": "2023-12-28T08:06:57.154Z",
       "status": "Want to Learn"
     },
     {
       "id": 7,
-      "front": "Define GCD and LCM in number theory.",
-      "back": "GCD (Greatest Common Divisor) is the largest positive integer that divides two or more integers without a remainder. LCM (Least Common Multiple) is the smallest positive integer that is a multiple of two or more integers.",
-      "lastModified": "2023-12-27T12:00:00Z",
+      "front": "2",
+      "back": "2",
+      "lastModified": "2023-12-28T08:07:08.972Z",
       "status": "Want to Learn"
     },
     {
-      "id": 8,
-      "front": "Explain modular arithmetic.",
-      "back": "Modular arithmetic involves performing arithmetic operations on remainders when dividing by a fixed positive integer called the modulus.",
-      "lastModified": "2023-12-27T12:00:00Z",
+      "front": "3",
+      "back": "3",
+      "lastModified": "2023-12-28T08:07:45.124Z",
+      "status": "Want to Learn",
+      "id": 8
+    },
+    {
+      "front": "5",
+      "back": "5",
+      "lastModified": "2023-12-28T08:10:54.504Z",
+      "status": "Want to Learn",
+      "id": 10
+    },
+    {
+      "id": 11,
+      "front": "6",
+      "back": "6",
+      "lastModified": "2023-12-28T08:11:01.648Z",
       "status": "Want to Learn"
     }
   ]

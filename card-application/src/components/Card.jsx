@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../assets/Card.css";
+import EditForm from "./EditForm";
 
 function convertISOToUserFriendly(
   isoString,
@@ -9,7 +10,7 @@ function convertISOToUserFriendly(
   return dateObj.toLocaleString(undefined, format);
 }
 
-function Card({ front, back, lastModified, status, onDelete }) {
+function Card({ id, front, back, lastModified, status, onDelete }) {
   const [isFlipped, setFlipped] = useState(false);
 
   const handleClick = () => {
@@ -41,16 +42,10 @@ function Card({ front, back, lastModified, status, onDelete }) {
           <p style={statusStyle}>{status}</p>
           <p style={timeStyle}>{convertISOToUserFriendly(lastModified)}</p>
           <div className="card-buttons">
-            <button
-              onClick={(event) => event.stopPropagation()}
-              className="edit-button"
-            >
+            <button onClick={(event)=>event.stopPropagation()} className="edit-button">
               Edit ✏️
             </button>
-            <button
-              onClick={handleDelete}
-              className="delete-button"
-            >
+            <button onClick={handleDelete} className="delete-button">
               Delete 🗑️
             </button>
           </div>

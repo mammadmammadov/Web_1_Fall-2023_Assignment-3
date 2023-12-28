@@ -14,7 +14,7 @@ function FlashcardPage() {
   const [sortOption, setSortOption] = useState("lastModified");
   
   const [newCard, setNewCard] = useState(false);
-  
+
 
   const handleAddCard = async (newCard) => {
     try {
@@ -39,6 +39,19 @@ function FlashcardPage() {
     }
   };
 
+  function createCard(card) {
+    return (
+      <Card
+        key={card.id}
+        front={card.front}
+        back={card.back}
+        lastModified={card.lastModified}
+        status={card.status}
+        onDelete={() => deleteFlashcard(card.id)}
+      />
+    );
+  }
+
   const deleteFlashcard = (id) => {
 
 
@@ -55,25 +68,12 @@ function FlashcardPage() {
     })
       .then((res) => {
         if (!res.ok) {
-          throw new Error(`Failed to delete!`);
+          throw new Error(`Failed to delete! Card id: ${id}`);
         }
         console.log(`Successfully deleted flashcard!`);
       })
       .catch((err) => console.error('Error while deleting', err));
   };
-
-  function createCard(card) {
-    return (
-      <Card
-        key={card.id}
-        front={card.front}
-        back={card.back}
-        lastModified={card.lastModified}
-        status={card.status}
-        onDelete={() => deleteFlashcard(card.id)}
-      />
-    );
-  }
 
   const url = `http://localhost:3001/flashcards`;
 
@@ -137,7 +137,7 @@ function FlashcardPage() {
 
       {sortedAndFilteredFlashcards.length >  0 ? (
         <div className="cards-list">
-          {sortedAndFilteredFlashcards.map(createCard)}
+          {sortedAndFilteredFlashcards.map((createCard))}
         </div>
       ) : (
         <h2 class="no-element">No card found</h2>
