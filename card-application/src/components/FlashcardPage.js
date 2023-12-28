@@ -39,7 +39,7 @@ function FlashcardPage() {
     }
   };
 
-  function createCard(card) {
+  const createCard = (card) => {
     return (
       <Card
         key={card.id}
@@ -64,13 +64,14 @@ function FlashcardPage() {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-      },
+      }
     })
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Failed to delete! Card id: ${id}`);
         }
         console.log(`Successfully deleted flashcard!`);
+        setFlashCards(remainingFlashcards);
       })
       .catch((err) => console.error('Error while deleting', err));
   };

@@ -1,39 +1,39 @@
 {
   "flashcards": [
     {
-      "id": 6,
+      "front": "18",
+      "back": "18",
+      "lastModified": "2023-12-28T19:08:34.780Z",
+      "status": "Want to Learn",
+      "id": 22
+    },
+    {
+      "id": 23,
+      "front": "19",
+      "back": "19",
+      "lastModified": "2023-12-28T19:08:44.703Z",
+      "status": "Want to Learn"
+    },
+    {
       "front": "1",
       "back": "1",
-      "lastModified": "2023-12-28T08:06:57.154Z",
-      "status": "Want to Learn"
-    },
-    {
-      "id": 7,
-      "front": "2",
-      "back": "2",
-      "lastModified": "2023-12-28T08:07:08.972Z",
-      "status": "Want to Learn"
-    },
-    {
-      "front": "3",
-      "back": "3",
-      "lastModified": "2023-12-28T08:07:45.124Z",
+      "lastModified": "2023-12-28T19:11:03.591Z",
       "status": "Want to Learn",
-      "id": 8
+      "id": 24
     },
     {
-      "front": "5",
-      "back": "5",
-      "lastModified": "2023-12-28T08:10:54.504Z",
+      "front": "20",
+      "back": "20",
+      "lastModified": "2023-12-28T19:13:07.174Z",
       "status": "Want to Learn",
-      "id": 10
+      "id": 25
     },
     {
-      "id": 11,
-      "front": "6",
-      "back": "6",
-      "lastModified": "2023-12-28T08:11:01.648Z",
-      "status": "Want to Learn"
+      "front": "30",
+      "back": "33",
+      "lastModified": "2023-12-28T19:16:04.280Z",
+      "status": "Want to Learn",
+      "id": 26
     }
   ]
 }
