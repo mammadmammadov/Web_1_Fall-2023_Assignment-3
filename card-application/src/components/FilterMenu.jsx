@@ -3,7 +3,7 @@ import "../assets/App.css";
 
 function FilterMenu({ filterStatus, onFilterChange }) {
   return (
-    <select class="custom-select"
+    <select className="custom-select"
       value={filterStatus}
       onChange={(e) => onFilterChange(e.target.value)}
     >

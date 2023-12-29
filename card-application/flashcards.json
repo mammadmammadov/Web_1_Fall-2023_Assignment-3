@@ -1,39 +1,25 @@
 {
   "flashcards": [
     {
-      "front": "18",
-      "back": "18",
-      "lastModified": "2023-12-28T19:08:34.780Z",
-      "status": "Want to Learn",
-      "id": 22
+      "id": 5,
+      "front": "What are eigenvectors and eigenvalues?",
+      "back": "Eigenvectors are nonzero vectors that only change by a scalar factor when a linear transformation is applied. Eigenvalues are the corresponding scalars.",
+      "lastModified": "2023-12-17T16:30:35.987Z",
+      "status": "Learned"
     },
     {
-      "id": 23,
-      "front": "19",
-      "back": "19",
-      "lastModified": "2023-12-28T19:08:44.703Z",
+      "id": 6,
+      "front": "Define a symmetric matrix.",
+      "back": "A symmetric matrix is a square matrix that is equal to its transpose.",
+      "lastModified": "2023-12-18T12:35:02.654Z",
+      "status": "Noted"
+    },
+    {
+      "id": 7,
+      "front": "What is a span of vectors?",
+      "back": "The span of vectors is the set of all possible linear combinations of those vectors.",
+      "lastModified": "2023-12-19T20:40:28.321Z",
       "status": "Want to Learn"
-    },
-    {
-      "front": "1",
-      "back": "1",
-      "lastModified": "2023-12-28T19:11:03.591Z",
-      "status": "Want to Learn",
-      "id": 24
-    },
-    {
-      "front": "20",
-      "back": "20",
-      "lastModified": "2023-12-28T19:13:07.174Z",
-      "status": "Want to Learn",
-      "id": 25
-    },
-    {
-      "front": "30",
-      "back": "33",
-      "lastModified": "2023-12-28T19:16:04.280Z",
-      "status": "Want to Learn",
-      "id": 26
     }
   ]
 }

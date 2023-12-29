@@ -12,8 +12,21 @@ function FlashcardPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState("All");
   const [sortOption, setSortOption] = useState("lastModified");
-  
   const [newCard, setNewCard] = useState(false);
+  const [cardAdded, setCardAdded] = useState(false);
+
+
+  useEffect(() => {
+    fetch('http://localhost:3001/flashcards')
+      .then((response) => response.json())
+      .then((data) => {
+        const sortedFlashcards = data.sort(
+          (a, b) => new Date(b.lastModified) - new Date(a.lastModified)
+        );
+        setFlashCards(sortedFlashcards);
+      })
+      .catch((error) => console.error('Error while fetching flashcards', error));
+  }, []); 
 
 
   const handleAddCard = async (newCard) => {
@@ -34,6 +47,9 @@ function FlashcardPage() {
       setFlashCards([...flashcards, newCard]);
 
       setNewCard(false);
+
+      setCardAdded(true);
+
     } catch (error) {
       console.error('Error adding card:', error);
     }
@@ -52,13 +68,14 @@ function FlashcardPage() {
     );
   }
 
-  const deleteFlashcard = (id) => {
+  const deleteFlashcard =  (id) => {
+
+    console.log('Deleting flashcard. ID:', id);
 
 
     const remainingFlashcards = flashcards.filter((card) => card.id !== id);
 
     setFlashCards(remainingFlashcards);
-  
 
     fetch(`http://localhost:3001/flashcards/${id}`, {
       method: 'DELETE',
@@ -71,14 +88,18 @@ function FlashcardPage() {
           throw new Error(`Failed to delete! Card id: ${id}`);
         }
         console.log(`Successfully deleted flashcard!`);
-        setFlashCards(remainingFlashcards);
+
       })
       .catch((err) => console.error('Error while deleting', err));
+
   };
 
   const url = `http://localhost:3001/flashcards`;
 
   useEffect(() => {
+
+    if(cardAdded){
+    
     fetch(url)
       .then((res) => {
         if (!res.ok) {
@@ -88,13 +109,15 @@ function FlashcardPage() {
         }
       })
       .then((data) => {
-        const sortedFlashcards = data.sort(
-          (a, b) => new Date(b.lastModified) - new Date(a.lastModified)
-        );
-        setFlashCards(sortedFlashcards);
+        setFlashCards(data);
+        setCardAdded(false);
       })
       .catch((error) => console.error("Error fetching data: ", error));
-  }, []);
+  }}, [cardAdded]);
+
+
+  // The [cardAdded] dependency array above ensures us that the effect runs whenever the cardAdded state happens
+  // It solved the delete problem of newly added cards in my case
 
   const sortedAndFilteredFlashcards = flashcards
     .filter((card) => {
@@ -141,7 +164,7 @@ function FlashcardPage() {
           {sortedAndFilteredFlashcards.map((createCard))}
         </div>
       ) : (
-        <h2 class="no-element">No card found</h2>
+        <h2 className="no-element">No card found</h2>
       )}
     </div>
   );

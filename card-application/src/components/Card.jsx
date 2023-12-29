@@ -10,7 +10,7 @@ function convertISOToUserFriendly(
   return dateObj.toLocaleString(undefined, format);
 }
 
-function Card({ id, front, back, lastModified, status, onDelete }) {
+function Card({ key, id, front, back, lastModified, status, onDelete }) {
   const [isFlipped, setFlipped] = useState(false);
 
   const handleClick = () => {
@@ -36,7 +36,7 @@ function Card({ id, front, back, lastModified, status, onDelete }) {
       className={`card-item ${isFlipped ? "flipped" : ""}`}
       onClick={handleClick}
     >
-      <div class="card-data">
+      <div className="card-data">
         <div className="card-front">
           <h3>{front}</h3>
           <p style={statusStyle}>{status}</p>

@@ -3,7 +3,7 @@ import "../assets/App.css";
 
 function SearchBar({ searchTerm, onSearchChange }) {
   return (
-    <input class="search-input"
+    <input className="search-input"
       type="text"
       placeholder="Search Flashcards"
       value={searchTerm}

@@ -40,9 +40,9 @@ const AddCard = ({ isOpen, onClose, onAddCard }) => {
           <textarea
             value={front}
             onChange={(e) => setFront(e.target.value)}
-            rows={6} // Adjust the number of rows as needed
-            cols={50} // Adjust the number of columns as needed
-            style={{ resize: 'none' }} // Disable resizing
+            rows={6} 
+            cols={50}
+            style={{ resize: 'none' }} 
             required
           />
         </label>
@@ -51,9 +51,9 @@ const AddCard = ({ isOpen, onClose, onAddCard }) => {
           <textarea
             value={back}
             onChange={(e) => setBack(e.target.value)}
-            rows={6} // Adjust the number of rows as needed
-            cols={50} // Adjust the number of columns as needed
-            style={{ resize: 'none' }} // Disable resizing
+            rows={6} 
+            cols={50} 
+            style={{ resize: 'none' }}
             required
           />
         </label>
