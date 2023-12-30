@@ -1,17 +1,23 @@
 .card-item.flipped .card-data {
   transform: rotateY(180deg);
-  
 }
 
 .card-data {
   transition: transform 0.3s;
   transform-style: preserve-3d;
+  /* Set a fixed height to prevent content-based changes */
+  height: 200px; /* Adjust this value as needed */
 }
 
 .card-front,
 .card-back {
   backface-visibility: hidden;
-  
+  position: absolute; /* Position absolutely within card-data */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 20%;
 }
 
 .card-front,
@@ -65,17 +71,10 @@
   opacity: 1;
 }
 
-
 .card-item.flipped .card-front {
   display: none;
 }
 
-
 .card-item.flipped .card-back {
-  display:flex;
+  display: flex;
 }
-
-
-
-
-
