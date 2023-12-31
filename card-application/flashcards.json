@@ -8,20 +8,6 @@
       "status": "Want to Learn"
     },
     {
-      "id": 2,
-      "front": "Define a matrix.",
-      "back": "A matrix is a two-dimensional array of numbers, symbols, or expressions arranged in rows and columns.",
-      "lastModified": "2023-12-15T09:15:30.567Z",
-      "status": "Learned"
-    },
-    {
-      "id": 3,
-      "front": "What is the determinant of a matrix?",
-      "back": "The determinant is a scalar value that can be calculated from the elements of a square matrix and provides important information about the matrix's properties.",
-      "lastModified": "2023-12-18T16:55:20.789Z",
-      "status": "Noted"
-    },
-    {
       "id": 5,
       "front": "What is a linear transformation?",
       "back": "A linear transformation is a mapping between two vector spaces that preserves vector addition and scalar multiplication. It is a fundamental concept in linear algebra.",
@@ -32,22 +18,8 @@
       "id": 6,
       "front": "Define the term 'span' in the context of linear algebra.",
       "back": "The span of a set of vectors is the set of all possible linear combinations of those vectors. It represents all the points that can be reached by scaling and adding the vectors in the set.",
-      "lastModified": "2023-12-14T11:10:35.678Z",
+      "lastModified": "2023-12-31T10:21:53.352Z",
       "status": "Noted"
-    },
-    {
-      "id": 9,
-      "front": "Define the cross product of two vectors.",
-      "back": "The cross product of two vectors in three-dimensional space is a vector that is perpendicular to both of them. It is used in various applications, including calculating the area of parallelograms and determining the direction of a vector perpendicular to a plane defined by two other vectors.",
-      "lastModified": "2023-12-23T15:30:25.678Z",
-      "status": "Noted"
-    },
-    {
-      "id": 10,
-      "front": "What is a symmetric matrix?",
-      "back": "A symmetric matrix is a square matrix that is equal to its transpose. The elements across the main diagonal are mirrored in a symmetric matrix.",
-      "lastModified": "2023-12-19T17:40:50.987Z",
-      "status": "Want to Learn"
     },
     {
       "id": 12,
@@ -61,13 +33,6 @@
       "front": "Define the term 'eigendecomposition.'",
       "back": "Eigendecomposition is the process of decomposing a matrix into a canonical form, whereby the matrix is represented as a product of eigenvalues and eigenvectors.",
       "lastModified": "2023-12-21T14:10:55.789Z",
-      "status": "Want to Learn"
-    },
-    {
-      "id": 14,
-      "front": "What is the trace of a matrix?",
-      "back": "The trace of a square matrix is the sum of its diagonal elements. It is a useful quantity in various mathematical applications and is invariant under similarity transformations.",
-      "lastModified": "2023-12-30T17:13:21.033Z",
       "status": "Want to Learn"
     },
     {
@@ -85,11 +50,18 @@
       "status": "Want to Learn"
     },
     {
-      "id": 17,
-      "front": "front",
-      "back": "back",
-      "lastModified": "2023-12-30T17:01:49.055Z",
-      "status": "Want to Learn"
+      "front": "yeni kart on",
+      "back": "yeni kart arxa",
+      "lastModified": "2023-12-31T10:13:27.432Z",
+      "status": "Want to Learn",
+      "id": 17
+    },
+    {
+      "front": "1",
+      "back": "1",
+      "lastModified": "2023-12-31T12:05:41.484Z",
+      "status": "Want to Learn",
+      "id": 18
     }
   ]
 }

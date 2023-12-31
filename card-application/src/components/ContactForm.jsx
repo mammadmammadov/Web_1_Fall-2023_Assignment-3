@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../assets/ContactForm.css";
 import "../assets/App.css"
-import swal from 'sweetalert';
+import Swal from 'sweetalert2';
 
 function ContactForm(){
   const [formData, setFormData] = useState({
@@ -16,7 +16,15 @@ function ContactForm(){
   };
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
+
+    for (const key in formData) {
+      if (key!=='id'&&formData[key].trim() === '') {
+        Swal.fire(`Please fill-in the ${key} field`);
+        return; // Stop form submission if any field is empty
+      }
+    }
 
     try {
       // Send the form data to the json-server
@@ -29,7 +37,7 @@ function ContactForm(){
       });
 
       if (res.ok) {
-        swal('Message sent successfully!')
+        Swal.fire("Mail is successfuly sent to local storage 😊");
         console.log('Message sent successfully:', formData);
 
         // Optionally, you can reset the form after successful submission

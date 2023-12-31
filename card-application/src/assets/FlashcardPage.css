@@ -31,13 +31,13 @@ p {
   margin: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
-  background-color: rgb(235, 235, 240);
+  background-color: rgb(255, 255, 233);
   min-height: 400px;
   max-height: fit-content;
 }
 
 .card-item:hover {
-  background-color: rgb(255, 212, 38);
+  background-color: rgb(245, 225, 162);
   transform: scale(1.02);
   cursor: pointer;
 }
@@ -81,4 +81,8 @@ p {
 
 .no-element {
   font-family: "Courier New", Courier, monospace;
+}
+
+html {
+  background-color: rgb(202, 202, 244);
 }

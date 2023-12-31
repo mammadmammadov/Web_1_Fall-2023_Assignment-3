@@ -2,9 +2,12 @@
 
 import React, { useState } from "react";
 import "../assets/EditFlashcards.css";
+import Swal from 'sweetalert2';
 
 function EditFlashcards({ card, onSave, onCancel, isActive }) {
   const [editedCard, setEditedCard] = useState({ ...card });
+
+
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -16,6 +19,13 @@ function EditFlashcards({ card, onSave, onCancel, isActive }) {
   };
 
   const handleSave = () => {
+    
+    for (const key in editedCard) {
+      if ((key==='front'||key=='back')&&editedCard[key].trim() === '') {
+        Swal.fire(`Please fill-in the ${key} field`);
+        return; // Stop form submission if any field is empty
+      }
+    }
     onSave(editedCard);
   };
 

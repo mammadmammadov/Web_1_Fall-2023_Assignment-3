@@ -8,7 +8,6 @@ import AddCard from "./AddCard";
 import EditFlashcards from "./EditFlashcards";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-
 function FlashcardPage() {
   const [flashcards, setFlashCards] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,15 +15,32 @@ function FlashcardPage() {
   const [sortOption, setSortOption] = useState("lastModified");
   const [newCard, setNewCard] = useState(false);
   const [cardAdded, setCardAdded] = useState(false);
-
   const [editingCard, setEditingCard] = useState(null);
 
 
-  //infinite scrolling
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
+
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
 
- 
+  const fetchFlashcards = async () => {
+    try {
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const response = await fetch(`http://localhost:3001/flashcards?_start=${startIndex}&_end=${startIndex + itemsPerPage}`);
+      const newData = await response.json();
+  
+      if (newData.length === 0) {
+        setHasMore(false);
+      } else {
+        setFlashCards((prevData) => [...prevData, ...newData]);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      // Handle error appropriately (e.g., show error message to the user)
+    }
+  };
 
   useEffect(() => {
     fetch("http://localhost:3001/flashcards")
@@ -40,22 +56,7 @@ function FlashcardPage() {
       );
   }, []);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(`http://localhost:3001/flashcards?page=${page}`);
-      const newData = await response.json();
-  
-      if (newData.length === 0) {
-        setHasMore(false);
-      } else {
-        setFlashCards((prevData) => [...prevData, ...newData]);
-      }
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      // Handle error appropriately (e.g., show error message to the user)
-    }
-  };
-  
+ 
 
   const handleAddCard = async (newCard) => {
     try {
@@ -112,7 +113,6 @@ function FlashcardPage() {
         if (!res.ok) {
           throw new Error(`Failed to delete! Card id: ${id}`);
         }
-        console.log(`Successfully deleted flashcard!`);
       })
       .catch((err) => console.error("Error while deleting", err));
   };
@@ -133,27 +133,28 @@ function FlashcardPage() {
           card.id === editedCard.id ? editedCard : card
         )
       );
-  
+
       // Make a request to update the flashcard on the server
-      const response = await fetch(`http://localhost:3001/flashcards/${editedCard.id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(editedCard),
-      });
-  
+      const response = await fetch(
+        `http://localhost:3001/flashcards/${editedCard.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(editedCard),
+        }
+      );
+
       if (!response.ok) {
-        console.error('Failed to update flashcard on the server.');
+        console.error("Failed to update flashcard on the server.");
       }
       // Reset the editing state
       setEditingCard(null);
     } catch (error) {
-      console.error('Error updating flashcard:', error);
+      console.error("Error updating flashcard:", error);
     }
   };
-  
-  
 
   const url = `http://localhost:3001/flashcards`;
 
@@ -221,7 +222,9 @@ function FlashcardPage() {
 
         {editingCard && (
           <EditFlashcards
-            card={sortedAndFilteredFlashcards.find((card) => card.id === editingCard)}
+            card={sortedAndFilteredFlashcards.find(
+              (card) => card.id === editingCard
+            )}
             onSave={saveChanges}
             onCancel={cancelEdit}
             isActive={true} // Pass a boolean indicating whether the popup is active
@@ -229,26 +232,26 @@ function FlashcardPage() {
         )}
       </div>
 
-      <InfiniteScroll
-        dataLength={flashcards.length}
-        next={() => {
-          setPage(page + 1);
-          fetchData();
-        }}
-        hasMore={hasMore}
-        loader={<h4>Loading...</h4>}
-        endMessage={<p>No more flashcards to load</p>}
-      >
-              {sortedAndFilteredFlashcards.length > 0 ? (
+
+
+      {sortedAndFilteredFlashcards.length > 0 ? (
+
+        <InfiniteScroll
+      dataLength={flashcards.length}
+      next={fetchFlashcards}
+      hasMore={true} // Set this to false when there are no more items to load
+      loader={<p>Loading...</p>}
+    >
         <div className="cards-list">
-          {sortedAndFilteredFlashcards.slice(0, page * 4).map(createCard)}
+          {sortedAndFilteredFlashcards.map(createCard)}
+          {loading && <p>Loading...</p>}
         </div>
+
+        </InfiniteScroll>
+        
       ) : (
         <h2 className="no-element">No card found</h2>
       )}
-      </InfiniteScroll>
-
-
     </div>
   );
 }

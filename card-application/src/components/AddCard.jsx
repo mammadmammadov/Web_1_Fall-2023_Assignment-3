@@ -1,6 +1,9 @@
 
 import React, { useState } from 'react';
 import "../assets/AddCard.css"
+import Swal from 'sweetalert2';
+
+
 const AddCard = ({ isOpen, onClose, onAddCard }) => {
   const [id, setId] = useState();
   const [front, setFront] = useState('');
@@ -11,7 +14,7 @@ const AddCard = ({ isOpen, onClose, onAddCard }) => {
   const handleAddCard = () => {
 
     if (!front || !back || !status) {
-      alert("Please fill in all fields.");
+      Swal.fire("Please fill in all fields.");
       return;
     }
 

@@ -10,7 +10,6 @@ function convertISOToUserFriendly(
 }
 
 function Card({
-  key,
   id,
   front,
   back,
