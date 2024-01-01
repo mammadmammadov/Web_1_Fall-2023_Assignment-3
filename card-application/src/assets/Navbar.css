@@ -1,38 +1,38 @@
-nav ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #424242;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #424242;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-nav li:hover{
-    background-color: #994242;
+nav li:hover {
+  background-color: #994242;
 }
 
-nav li{
-    /* float:left is the one making the menu horizontal */
-    float:left; 
-    margin: 0;
-    padding: 0;
+nav li {
+  /* float:left is the one making the menu horizontal */
+  float: left;
+  margin: 0;
+  padding: 0;
 }
 
-nav .active{
-    background-color: brown;
+nav .active {
+  background-color: brown;
 }
 
-nav li a{
-    display: block;
-    color: rgb(242, 242, 247);
-    text-align: center;
-    padding: 20px 40px;
-    text-decoration: none !important;
+nav li a {
+  display: block;
+  color: rgb(242, 242, 247);
+  text-align: center;
+  padding: 20px 40px;
+  text-decoration: none !important;
 }
 
-nav{
-    z-index: 99;
-    position: fixed;
+nav {
+  z-index: 99;
+  position: fixed;
 }

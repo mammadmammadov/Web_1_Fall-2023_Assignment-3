@@ -1,7 +1,6 @@
 import React from "react";
 import "../assets/Home.css";
 
-
 function Project(props) {
   return (
     <li className="project-item">

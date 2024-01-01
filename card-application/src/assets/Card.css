@@ -5,14 +5,13 @@
 .card-data {
   transition: transform 0.3s;
   transform-style: preserve-3d;
-  /* Set a fixed height to prevent content-based changes */
-  height: 200px; /* Adjust this value as needed */
+  height: 200px;
 }
 
 .card-front,
 .card-back {
   backface-visibility: hidden;
-  position: absolute; /* Position absolutely within card-data */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -77,4 +76,48 @@
 
 .card-item.flipped .card-back {
   display: flex;
+}
+
+.checkbox-container {
+  position: sticky;
+  margin-top: 5%;
+  bottom: 10px;
+  right: 10px;
+}
+
+.checkbox-container input {
+  display: none;
+}
+
+.checkbox-container .checkmark {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #e0e0e0;
+  border: 2px solid #757575;
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.checkbox-container input:checked + .checkmark {
+  background-color: #2196f3;
+  border-color: #2196f3;
+}
+
+.checkbox-container .checkmark:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  height: 8px;
+  width: 4px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+}
+
+.checkbox-container:hover .checkmark {
+  background-color: #ddd;
+  border-color: #555;
 }

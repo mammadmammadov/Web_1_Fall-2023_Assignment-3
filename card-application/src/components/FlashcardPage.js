@@ -7,6 +7,8 @@ import SortMenu from "./SortMenu";
 import AddCard from "./AddCard";
 import EditFlashcards from "./EditFlashcards";
 import InfiniteScroll from "react-infinite-scroll-component";
+import "../assets/App.css";
+import ShareCards from "./ShareCards";
 
 function FlashcardPage() {
   const [flashcards, setFlashCards] = useState([]);
@@ -16,13 +18,13 @@ function FlashcardPage() {
   const [newCard, setNewCard] = useState(false);
   const [cardAdded, setCardAdded] = useState(false);
   const [editingCard, setEditingCard] = useState(null);
-
   const [displayedCards, setDisplayedCards] = useState(7);
+  const [selectedFlashcards, setSelectedFlashcards] = useState([]);
 
   const fetchMoreData = () => {
     setTimeout(() => {
       setDisplayedCards((prev) => prev + 7);
-    }, 1000); // Add a delay to simulate async data fetching
+    }, 1000);
   };
 
   useEffect(() => {
@@ -30,7 +32,8 @@ function FlashcardPage() {
       .then((response) => response.json())
       .then((data) => {
         const sortedFlashcards = data.sort(
-          (a, b) => new Date(b.lastModified) - new Date(a.lastModified)
+          (date1, date2) =>
+            new Date(date2.lastModified) - new Date(date1.lastModified)
         );
         setFlashCards(sortedFlashcards);
       })
@@ -39,8 +42,13 @@ function FlashcardPage() {
       );
   }, []);
 
-  const handleAddCard = async (newCard) => {
+  const handleAddCard = async (card) => {
     try {
+      const newCard = {
+        ...card,
+        lastModified: new Date().toISOString(),
+      };
+
       const res = await fetch("http://localhost:3001/flashcards", {
         method: "POST",
         headers: {
@@ -53,7 +61,7 @@ function FlashcardPage() {
         throw new Error("Failed to add card");
       }
 
-      setFlashCards([...flashcards, newCard]);
+      setFlashCards([...flashcards, card]);
 
       setNewCard(false);
 
@@ -67,12 +75,15 @@ function FlashcardPage() {
     return (
       <Card
         key={card.id}
+        id={card.id}
         front={card.front}
         back={card.back}
         lastModified={card.lastModified}
         status={card.status}
         onDelete={() => deleteFlashcard(card.id)}
         onEdit={() => startEditing(card.id)}
+        onToggleSelection={handleCardToggle}
+        isSelected={selectedFlashcards.includes(card.id)}
       />
     );
   };
@@ -108,14 +119,12 @@ function FlashcardPage() {
 
   const saveChanges = async (editedCard) => {
     try {
-      // Update the card in the state
       setFlashCards((prevFlashcardsData) =>
         prevFlashcardsData.map((card) =>
           card.id === editedCard.id ? editedCard : card
         )
       );
 
-      // Make a request to update the flashcard on the server
       const response = await fetch(
         `http://localhost:3001/flashcards/${editedCard.id}`,
         {
@@ -130,7 +139,7 @@ function FlashcardPage() {
       if (!response.ok) {
         console.error("Failed to update flashcard on the server.");
       }
-      // Reset the editing state
+
       setEditingCard(null);
     } catch (error) {
       console.error("Error updating flashcard:", error);
@@ -160,7 +169,7 @@ function FlashcardPage() {
   // The [cardAdded] dependency array above ensures us that the effect runs whenever the cardAdded state happens
   // It solved the delete problem of newly added cards in my case
 
-  const sortedAndFilteredFlashcards = flashcards.slice(0, displayedCards)
+  const sortedAndFilteredFlashcards = flashcards
     .filter((card) => {
       const filterCondition =
         filterStatus === "All" ? true : card.status === filterStatus;
@@ -178,7 +187,16 @@ function FlashcardPage() {
           : new Date(a.lastModified) - new Date(b.lastModified);
 
       return comparator;
-    });
+    })
+    .slice(0, displayedCards);
+
+  const handleCardToggle = (cardId) => {
+    setSelectedFlashcards((prevSelected) =>
+      prevSelected.includes(cardId)
+        ? prevSelected.filter((id) => id !== cardId)
+        : [...prevSelected, cardId]
+    );
+  };
 
   return (
     <div className="grid-container">
@@ -192,13 +210,18 @@ function FlashcardPage() {
         <SortMenu sortOption={sortOption} onSortChange={setSortOption} />
 
         <button className="add" onClick={() => setNewCard(true)}>
-          ➕
+          󠀫󠀫+
         </button>
 
         <AddCard
           isOpen={newCard}
           onClose={() => setNewCard(false)}
           onAddCard={handleAddCard}
+        />
+
+        <ShareCards
+          selectedFlashcards={selectedFlashcards}
+          flashcards={sortedAndFilteredFlashcards}
         />
 
         {editingCard && (
@@ -208,23 +231,21 @@ function FlashcardPage() {
             )}
             onSave={saveChanges}
             onCancel={cancelEdit}
-            isActive={true} // Pass a boolean indicating whether the popup is active
+            isActive={true}
           />
         )}
       </div>
 
       {sortedAndFilteredFlashcards.length > 0 ? (
         <InfiniteScroll
-            dataLength={sortedAndFilteredFlashcards.length}
-            next={fetchMoreData}
-            hasMore={sortedAndFilteredFlashcards.length<flashcards.length}
-            loader={<br></br>}
-          >
-        <div className="cards-list">
-
+          dataLength={sortedAndFilteredFlashcards.length}
+          next={fetchMoreData}
+          hasMore={sortedAndFilteredFlashcards.length < flashcards.length}
+          loader={<br></br>}
+        >
+          <div className="cards-list">
             {sortedAndFilteredFlashcards.map(createCard)}
-          
-        </div>
+          </div>
         </InfiniteScroll>
       ) : (
         <h2 className="no-element">No card found</h2>

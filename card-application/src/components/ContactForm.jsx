@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "../assets/ContactForm.css";
-import "../assets/App.css"
-import Swal from 'sweetalert2';
+import "../assets/App.css";
+import Swal from "sweetalert2";
 
-function ContactForm(){
+function ContactForm() {
   const [formData, setFormData] = useState({
-    id:'',
-    subject: '',
-    email: '',
-    content: '',
+    id: "",
+    subject: "",
+    email: "",
+    content: "",
   });
 
   const handleChange = (e) => {
@@ -16,42 +16,39 @@ function ContactForm(){
   };
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
 
     for (const key in formData) {
-      if (key!=='id'&&formData[key].trim() === '') {
+      if (key !== "id" && formData[key].trim() === "") {
         Swal.fire(`Please fill-in the ${key} field`);
-        return; // Stop form submission if any field is empty
+        return;
       }
     }
 
     try {
-      // Send the form data to the json-server
-      const res = await fetch('http://localhost:3002/messages', {
-        method: 'POST',
+      const res = await fetch("http://localhost:3002/messages", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (res.ok) {
         Swal.fire("Mail is successfuly sent to local storage 😊");
-        console.log('Message sent successfully:', formData);
+        console.log("Message sent successfully:", formData);
 
-        // Optionally, you can reset the form after successful submission
         setFormData({
-          id: '',
-          subject: '',
-          email: '',
-          content: '',
+          id: "",
+          subject: "",
+          email: "",
+          content: "",
         });
       } else {
-        console.error('Error sending message:', res.statusText);
+        console.error("Error sending message:", res.statusText);
       }
     } catch (error) {
-      console.error('Error sending message:', error);
+      console.error("Error sending message:", error);
     }
   };
 
@@ -61,23 +58,37 @@ function ContactForm(){
       <form className="contact-form" onSubmit={handleSubmit}>
         <label>
           Subject:
-          <input type="text" name="subject" value={formData.subject} onChange={handleChange} />
+          <input
+            type="text"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+          />
         </label>
         <br />
         <label>
           Email:
-          <input type="email" name="email" value={formData.email} onChange={handleChange} />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
         </label>
         <br />
         <label>
           Content:
-          <textarea name="content" value={formData.content} onChange={handleChange} />
+          <textarea
+            name="content"
+            value={formData.content}
+            onChange={handleChange}
+          />
         </label>
         <br />
         <button type="submit">Submit</button>
       </form>
     </div>
   );
-};
+}
 
 export default ContactForm;

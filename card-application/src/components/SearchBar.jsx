@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 import "../assets/App.css";
 
 function SearchBar({ searchTerm, onSearchChange }) {
   return (
-    <input className="search-input"
+    <input
+      className="search-input"
       type="text"
       placeholder="Search Flashcards"
       value={searchTerm}

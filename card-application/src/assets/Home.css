@@ -1,11 +1,6 @@
-/* Home.css */
-
-h1{
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-}
-
-p{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+h1 {
+  font-family: "Raleway", sans-serif;
+  color: #45505b;
 }
 
 .grid-container {
@@ -21,8 +16,14 @@ p{
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-.projects-list p{
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serifl
+.projects-list p {
+  font-family: Verdana, sans-serif;
+  color: #45505b;
+}
+
+.projects-list h3 {
+  font-family: Verdana, sans-serif;
+  color: #212529;
 }
 
 .project-item {
@@ -33,7 +34,7 @@ p{
   background-color: rgb(235, 235, 240);
 }
 
-.project-item:hover{
+.project-item:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   background-color: rgb(255, 179, 64);
 }
@@ -42,11 +43,33 @@ p{
   display: block;
   margin-top: 10px;
   text-decoration: none;
-  color: #3498db;
+  color: rgb(69, 79, 224);
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .project-item a:hover {
   color: #2980b9;
+}
+
+.about-me {
+  font-size: 1.1rem;
+  font-family: "Comic Sans MS", cursive;
+  margin-left: 5%;
+  margin-right: 5%;
+  --s: 0.1em;
+  --c: #542a2c;
+
+  color: #0000;
+  padding-bottom: var(--s);
+  background: linear-gradient(90deg, var(--c) 50%, #000 0)
+      calc(100% - var(--_p, 0%)) / 200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 1.5s;
+}
+
+.about-me:hover {
+  --_p: 100%;
 }

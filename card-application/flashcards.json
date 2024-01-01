@@ -4,127 +4,344 @@
       "id": 1,
       "front": "What is a vector in linear algebra?",
       "back": "A vector is an ordered list of numbers and is often used to represent points in space or directions.",
-      "lastModified": "2023-12-20T12:30:45.123Z",
+      "lastModified": "2024-01-01T19:17:56.148Z",
+      "status": "Noted"
+    },
+    {
+      "id": 2,
+      "front": "Define a matrix.",
+      "back": "A matrix is a two-dimensional array of numbers, symbols, or expressions arranged in rows and columns.",
+      "lastModified": "2023-12-20T12:32:15.456Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 3,
+      "front": "What is the transpose of a matrix?",
+      "back": "The transpose of a matrix is obtained by swapping its rows with columns. If A is an m x n matrix, the transpose is an n x m matrix.",
+      "lastModified": "2023-12-20T12:35:30.789Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 4,
+      "front": "Explain scalar multiplication of a matrix.",
+      "back": "Scalar multiplication involves multiplying each element of a matrix by a scalar (single number).",
+      "lastModified": "2023-12-20T12:40:20.567Z",
       "status": "Want to Learn"
     },
     {
       "id": 5,
-      "front": "What is a linear transformation?",
-      "back": "A linear transformation is a mapping between two vector spaces that preserves vector addition and scalar multiplication. It is a fundamental concept in linear algebra.",
-      "lastModified": "2023-12-22T08:45:55.456Z",
-      "status": "Learned"
+      "front": "What is a linear combination?",
+      "back": "A linear combination is the sum of scalar multiples of vectors or matrices.",
+      "lastModified": "2023-12-20T12:45:10.234Z",
+      "status": "Want to Learn"
     },
     {
       "id": 6,
-      "front": "Define the term 'span' in the context of linear algebra.",
-      "back": "The span of a set of vectors is the set of all possible linear combinations of those vectors. It represents all the points that can be reached by scaling and adding the vectors in the set.",
-      "lastModified": "2023-12-31T10:21:53.352Z",
-      "status": "Noted"
+      "front": "Define a system of linear equations.",
+      "back": "A system of linear equations is a set of equations where each equation is a linear combination of the same variables.",
+      "lastModified": "2023-12-20T12:50:05.678Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 7,
+      "front": "What is the row echelon form of a matrix?",
+      "back": "A matrix is in row echelon form if it has the following properties: all zero rows are at the bottom, the leading entry of each nonzero row occurs to the right of the leading entry of the previous row, and all entries in a column below and above a leading entry are zero.",
+      "lastModified": "2023-12-20T13:00:55.432Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 8,
+      "front": "Explain the concept of matrix multiplication.",
+      "back": "Matrix multiplication is a binary operation that takes two matrices and produces another matrix. The element in the i-th row and j-th column of the resulting matrix is the sum of the products of the elements in the i-th row of the first matrix and the j-th column of the second matrix.",
+      "lastModified": "2023-12-20T13:10:40.876Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 9,
+      "front": "What is a square matrix?",
+      "back": "A square matrix is a matrix that has the same number of rows and columns.",
+      "lastModified": "2023-12-20T13:15:35.321Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 10,
+      "front": "Define eigenvector and eigenvalue.",
+      "back": "An eigenvector of a square matrix A is a nonzero vector v such that Av is a scalar multiple of v. The scalar multiple is the eigenvalue corresponding to that eigenvector.",
+      "lastModified": "2023-12-20T13:20:25.678Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 11,
+      "front": "What is a vector space?",
+      "back": "A vector space is a set of vectors that satisfies a set of properties, including closure under vector addition and scalar multiplication.",
+      "lastModified": "2023-12-20T13:25:15.987Z",
+      "status": "Want to Learn"
     },
     {
       "id": 12,
-      "front": "What is the rank of a matrix? What is the rank of a matrix? What is the rank of a matrix? What is the rank of a matrix?",
-      "back": "The rank of a matrix is the maximum number of linearly independent rows or columns in the matrix. It provides information about the dimensionality of the vector space spanned by the matrix's rows or columns.",
-      "lastModified": "2023-12-30T17:00:24.510Z",
-      "status": "Noted"
+      "front": "Explain the concept of orthogonality.",
+      "back": "Vectors are orthogonal if their dot product is zero. In a broader context, matrices can also be orthogonal if their transpose is equal to their inverse.",
+      "lastModified": "2023-12-20T13:30:10.345Z",
+      "status": "Want to Learn"
     },
     {
       "id": 13,
-      "front": "Define the term 'eigendecomposition.'",
-      "back": "Eigendecomposition is the process of decomposing a matrix into a canonical form, whereby the matrix is represented as a product of eigenvalues and eigenvectors.",
-      "lastModified": "2023-12-21T14:10:55.789Z",
+      "front": "Define the rank of a matrix.",
+      "back": "The rank of a matrix is the maximum number of linearly independent rows or columns in the matrix.",
+      "lastModified": "2023-12-20T13:35:00.000Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 14,
+      "front": "What is a basis of a vector space?",
+      "back": "A basis is a set of vectors that spans the vector space, and the vectors in the set are linearly independent.",
+      "lastModified": "2023-12-20T13:40:45.123Z",
       "status": "Want to Learn"
     },
     {
       "id": 15,
-      "front": "Explain the concept of a linearly independent set of vectors.",
-      "back": "A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. In other words, none of the vectors in the set is redundant.",
-      "lastModified": "2023-12-25T16:20:15.567Z",
-      "status": "Noted"
-    },
-    {
-      "id": 16,
-      "front": "What is a basis for a vector space?",
-      "back": "A basis for a vector space is a set of linearly independent vectors that span the entire vector space. Any vector in the space can be expressed as a linear combination of the basis vectors.",
-      "lastModified": "2023-12-24T12:05:30.876Z",
+      "front": "Explain the concept of a linear transformation.",
+      "back": "A linear transformation is a function between two vector spaces that preserves vector addition and scalar multiplication.",
+      "lastModified": "2023-12-20T13:45:30.456Z",
       "status": "Want to Learn"
     },
     {
-      "front": "yeni kart ",
-      "back": "yeni kart arxa",
-      "lastModified": "2023-12-31T14:37:23.679Z",
-      "status": "Want to Learn",
-      "id": 17
+      "id": 16,
+      "front": "Define the determinant of a 2x2 matrix.",
+      "back": "For a 2x2 matrix [[a, b], [c, d]], the determinant is ad - bc.",
+      "lastModified": "2023-12-20T13:50:20.789Z",
+      "status": "Want to Learn"
     },
     {
-      "front": "1",
-      "back": "1",
-      "lastModified": "2023-12-31T12:05:41.484Z",
-      "status": "Want to Learn",
-      "id": 18
+      "id": 17,
+      "front": "What is a diagonal matrix?",
+      "back": "A diagonal matrix is a square matrix in which all off-diagonal elements are zero.",
+      "lastModified": "2023-12-20T13:55:10.234Z",
+      "status": "Want to Learn"
     },
     {
-      "front": "dsdkdk",
-      "back": "djjkdksj",
-      "lastModified": "2023-12-31T15:00:35.146Z",
-      "status": "Want to Learn",
-      "id": 19
+      "id": 18,
+      "front": "Explain the concept of Gaussian elimination.",
+      "back": "Gaussian elimination is a method for solving systems of linear equations by transforming the augmented matrix to its row-echelon form.",
+      "lastModified": "2023-12-20T14:00:05.678Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 19,
+      "front": "What is the inverse of a matrix?",
+      "back": "The inverse of a square matrix A, denoted as A^-1, is a matrix such that A * A^-1 = A^-1 * A = I, where I is the identity matrix.",
+      "lastModified": "2023-12-20T14:05:55.432Z",
+      "status": "Want to Learn"
     },
     {
       "id": 20,
-      "front": "djdsjksdjk",
-      "back": "dlsdksdk",
-      "lastModified": "2023-12-31T15:00:47.911Z",
+      "front": "Define the null space of a matrix.",
+      "back": "The null space of a matrix A, denoted as Null(A) or N(A), is the set of all vectors x such that Ax = 0.",
+      "lastModified": "2023-12-20T14:10:40.876Z",
       "status": "Want to Learn"
     },
     {
       "id": 21,
-      "front": "asksak",
-      "back": "sksakska",
-      "lastModified": "2023-12-31T15:00:54.957Z",
+      "front": "What is the characteristic polynomial of a matrix?",
+      "back": "The characteristic polynomial of a square matrix A is a polynomial det(A - λI), where λ is an eigenvalue of A and I is the identity matrix.",
+      "lastModified": "2023-12-20T14:15:35.321Z",
       "status": "Want to Learn"
     },
     {
       "id": 22,
-      "front": "sksaksak",
-      "back": "sksaksk",
-      "lastModified": "2023-12-31T15:01:02.058Z",
+      "front": "Explain the concept of vector subspace.",
+      "back": "A vector subspace of a vector space V is a subset of V that is itself a vector space with respect to the same vector addition and scalar multiplication operations.",
+      "lastModified": "2023-12-20T14:20:25.678Z",
       "status": "Want to Learn"
     },
     {
       "id": 23,
-      "front": "skasksk",
-      "back": "dlldls",
-      "lastModified": "2023-12-31T15:01:09.427Z",
+      "front": "What is the Jordan normal form of a matrix?",
+      "back": "The Jordan normal form is a way of representing a square matrix as the sum of a diagonal matrix and a nilpotent matrix.",
+      "lastModified": "2023-12-20T14:25:15.987Z",
       "status": "Want to Learn"
     },
     {
       "id": 24,
-      "front": "aksksak",
-      "back": ",,",
-      "lastModified": "2023-12-31T15:01:15.802Z",
+      "front": "Define the dot product of two vectors.",
+      "back": "The dot product (or inner product) of two vectors A and B is given by A · B = |A| |B| cos(θ), where |A| and |B| are the magnitudes of the vectors and θ is the angle between them.",
+      "lastModified": "2023-12-20T14:30:10.345Z",
       "status": "Want to Learn"
     },
     {
-      "front": "1",
-      "back": "2",
-      "lastModified": "2023-12-31T15:04:25.617Z",
-      "status": "Want to Learn",
-      "id": 25
+      "id": 25,
+      "front": "Explain the concept of linear independence.",
+      "back": "Vectors are linearly independent if no vector in the set can be written as a linear combination of the others.",
+      "lastModified": "2023-12-20T14:35:00.000Z",
+      "status": "Want to Learn"
     },
     {
       "id": 26,
-      "front": "34",
-      "back": "4",
-      "lastModified": "2023-12-31T15:04:38.523Z",
+      "front": "What is the adjugate of a matrix?",
+      "back": "The adjugate (or adjoint) of a square matrix A is the transpose of the cofactor matrix of A.",
+      "lastModified": "2023-12-20T14:40:45.123Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 27,
+      "front": "Define a symmetric matrix.",
+      "back": "A symmetric matrix is a square matrix that is equal to its transpose.",
+      "lastModified": "2023-12-20T14:45:30.456Z",
       "status": "Want to Learn"
     },
     {
       "id": 28,
-      "front": "777",
-      "back": "888",
-      "lastModified": "2023-12-31T15:04:50.907Z",
+      "front": "What is the Gram-Schmidt process?",
+      "back": "The Gram-Schmidt process is a method for orthonormalizing a set of vectors in an inner product space.",
+      "lastModified": "2023-12-20T14:50:20.789Z",
       "status": "Want to Learn"
+    },
+    {
+      "id": 29,
+      "front": "Explain the concept of singular value decomposition (SVD).",
+      "back": "Singular value decomposition is a factorization of a matrix into the product of three matrices, one of which is diagonal and the others are unitary.",
+      "lastModified": "2023-12-20T14:55:10.234Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 30,
+      "front": "What is the spectral theorem?",
+      "back": "The spectral theorem states that for any symmetric matrix, there exists an orthogonal matrix that diagonalizes it.",
+      "lastModified": "2023-12-20T15:00:05.678Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 31,
+      "front": "Explain the process of finding the eigenvalues and eigenvectors of a matrix.",
+      "back": "To find the eigenvalues and eigenvectors of a matrix A, solve the characteristic equation det(A - λI) = 0 to find the eigenvalues (where λ is a scalar), and then substitute each eigenvalue back into the equation (A - λI)x = 0 to find the corresponding eigenvectors.",
+      "lastModified": "2023-12-21T10:15:30.789Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 32,
+      "front": "What is a Hermitian matrix in the context of complex vector spaces?",
+      "back": "A Hermitian matrix is a complex square matrix that is equal to its own conjugate transpose. In other words, A matrix A is Hermitian if A* = A, where A* denotes the conjugate transpose of A.",
+      "lastModified": "2023-12-21T10:30:45.123Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 33,
+      "front": "Explain the geometric interpretation of the determinant of a 2x2 matrix.",
+      "back": "The determinant of a 2x2 matrix [a, b; c, d] represents the signed area of the parallelogram formed by the column vectors [a, c] and [b, d]. It is positive if the vectors form a counterclockwise orientation and negative if they form a clockwise orientation.",
+      "lastModified": "2023-12-21T10:45:00.456Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 34,
+      "front": "Define the concept of a linearly dependent set of vectors.",
+      "back": "A set of vectors is linearly dependent if at least one vector in the set can be expressed as a linear combination of the others. In other words, there exist coefficients, not all zero, such that the linear combination equals zero.",
+      "lastModified": "2023-12-21T11:00:15.789Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 35,
+      "front": "What are the applications of matrix diagonalization?",
+      "back": "Matrix diagonalization is used in various applications, including solving systems of linear differential equations, computing powers of matrices more efficiently, and analyzing dynamical systems.",
+      "lastModified": "2023-12-21T11:15:30.123Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 36,
+      "front": "Explain the concept of a positive definite matrix.",
+      "back": "A matrix is positive definite if, for any non-zero column vector x, the quadratic form x^T Ax is positive, where x^T denotes the transpose of x. This implies that all eigenvalues of the matrix are positive.",
+      "lastModified": "2023-12-21T11:30:45.456Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 37,
+      "front": "What is the Gram matrix in the context of inner product spaces?",
+      "back": "In an inner product space, the Gram matrix is formed by taking the inner products of all pairs of vectors in a given set. It is often used in linear algebra and functional analysis.",
+      "lastModified": "2023-12-21T11:45:00.789Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 38,
+      "front": "Explain the concept of a singular matrix.",
+      "back": "A square matrix is singular if its determinant is zero, meaning it is not invertible. Singular matrices have linearly dependent rows or columns and are often associated with systems of linear equations that have infinitely many solutions.",
+      "lastModified": "2023-12-21T12:00:15.123Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 39,
+      "front": "What are the fundamental subspaces of a matrix?",
+      "back": "The fundamental subspaces of a matrix A include the column space (range), null space, row space, and left null space. These subspaces provide insights into the properties and solutions of linear systems associated with the matrix.",
+      "lastModified": "2023-12-21T12:15:30.456Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 40,
+      "front": "Define the concept of a skew-symmetric matrix.",
+      "back": "A skew-symmetric (or antisymmetric) matrix is a square matrix whose transpose is equal to its negative. In other words, A matrix A is skew-symmetric if A^T = -A.",
+      "lastModified": "2023-12-21T12:30:45.789Z",
+      "status": "Want to Learn"
+    },
+    {
+      "front": "front1",
+      "back": "back1",
+      "lastModified": "2024-01-01T17:44:39.040Z",
+      "status": "Want to Learn",
+      "id": 41
+    },
+    {
+      "front": "front2",
+      "back": "back2",
+      "lastModified": "2024-01-01T17:48:13.355Z",
+      "status": "Want to Learn",
+      "id": 42
+    },
+    {
+      "id": 43,
+      "front": "front3",
+      "back": "back3",
+      "lastModified": "2024-01-01T17:48:26.318Z",
+      "status": "Want to Learn"
+    },
+    {
+      "front": "front4",
+      "back": "back4",
+      "lastModified": "2024-01-01T17:49:31.651Z",
+      "status": "Want to Learn",
+      "id": 44
+    },
+    {
+      "id": 45,
+      "front": "front5",
+      "back": "back5",
+      "lastModified": "2024-01-01T17:50:16.037Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 46,
+      "front": "front6",
+      "back": "back6",
+      "lastModified": "2024-01-01T17:50:31.836Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 47,
+      "front": "front7",
+      "back": "back7",
+      "lastModified": "2024-01-01T17:50:47.067Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 48,
+      "front": "learned1",
+      "back": "learned2",
+      "lastModified": "2024-01-01T18:05:21.057Z",
+      "status": "Learned"
+    },
+    {
+      "id": 49,
+      "front": "learned2",
+      "back": "learned2",
+      "lastModified": "2024-01-01T18:05:07.775Z",
+      "status": "Learned"
     }
   ]
 }

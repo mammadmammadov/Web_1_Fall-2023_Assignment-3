@@ -3,26 +3,30 @@ import "../assets/Home.css";
 import Project from "./Project";
 import projectList from "./ProjectList";
 
-function createProject(project){
-  return <Project
-    title = {project.title}
-    description = {project.description}
-    link = {project.link}
-  />
+function createProject(project) {
+  return (
+    <Project
+      title={project.title}
+      description={project.description}
+      link={project.link}
+    />
+  );
 }
 
 function Home() {
   return (
     <div className="grid-container">
       <h1>i'm Mammad Mammadov</h1>
-      <p>
-        I'm passionate about web development and have worked on several
-        projects. Below is a list of my projects:
+      <p className="about-me">
+        I am a junior Information Technology student at ADA University,
+        Azerbaijan. I consider myself an agile, lifelong learner who values
+        every opportunity for academic and professional growth. I possess strong
+        theoretical and practical skills in principles of information systems,
+        programming, and Math. My main interest areas are Full Stack Development
+        and Machine Learning.
       </p>
-      <ul className="projects-list">
-        {projectList.map(createProject)}
-        
-      </ul>
+
+      <ul className="projects-list">{projectList.map(createProject)}</ul>
     </div>
   );
 }

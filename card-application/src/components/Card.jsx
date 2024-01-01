@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../assets/Card.css";
+import "../assets/FlashcardPage.css";
 
 function convertISOToUserFriendly(
   isoString,
@@ -17,8 +18,20 @@ function Card({
   status,
   onEdit,
   onDelete,
+  onToggleSelection,
 }) {
+  const [isSelected, setIsSelected] = useState(false);
   const [isFlipped, setFlipped] = useState(false);
+
+  const handleCheckboxChange = (event) => {
+    event.stopPropagation();
+    setIsSelected(!isSelected);
+    if (id !== undefined) {
+      onToggleSelection(id);
+    } else {
+      console.error("Card ID is undefined.");
+    }
+  };
 
   const handleClick = () => {
     setFlipped(!isFlipped);
@@ -53,6 +66,18 @@ function Card({
           <h3>{front}</h3>
           <p style={statusStyle}>{status}</p>
           <p style={timeStyle}>{convertISOToUserFriendly(lastModified)}</p>
+          <label
+            className="checkbox-container"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <input
+              type="checkbox"
+              checked={isSelected}
+              onChange={handleCheckboxChange}
+              onClick={(e) => e.stopPropagation()}
+            />
+            <span className="checkmark"></span>
+          </label>
           <div className="card-buttons">
             <button onClick={handleEdit} className="edit-button">
               Edit ✏️

@@ -1,18 +1,15 @@
-
-import React, { useState } from 'react';
-import "../assets/AddCard.css"
-import Swal from 'sweetalert2';
-
+import React, { useState } from "react";
+import "../assets/AddCard.css";
+import Swal from "sweetalert2";
 
 const AddCard = ({ isOpen, onClose, onAddCard }) => {
   const [id, setId] = useState();
-  const [front, setFront] = useState('');
-  const [back, setBack] = useState('');
-  const [status, setStatus] = useState('Want to Learn');
+  const [front, setFront] = useState("");
+  const [back, setBack] = useState("");
+  const [status, setStatus] = useState("Want to Learn");
   const [lastModified, setLastModified] = useState(new Date().toISOString());
 
   const handleAddCard = () => {
-
     if (!front || !back || !status) {
       Swal.fire("Please fill in all fields.");
       return;
@@ -23,29 +20,28 @@ const AddCard = ({ isOpen, onClose, onAddCard }) => {
       front,
       back,
       lastModified,
-      status
+      status,
     };
-    
-    setId(id+1);
+
     onAddCard(newCard);
-    setLastModified(new Date().toISOString());
-    setFront('');
-    setBack('');
-    setStatus('Want to Learn'); // Reset status to default
+    setFront("");
+    setBack("");
+    setStatus("Want to Learn");
+    setId((id) => id + 1);
     onClose();
   };
 
   return (
-    <div className={`modal ${isOpen ? 'open' : 'closed'}`}>
-      <div className="modal-content">
+    <div className={`popup ${isOpen ? "open" : "closed"}`}>
+      <div className="popup-content">
         <label>
           Front:
           <textarea
             value={front}
             onChange={(e) => setFront(e.target.value)}
-            rows={6} 
+            rows={6}
             cols={50}
-            style={{ resize: 'none' }} 
+            style={{ resize: "none" }}
             required
           />
         </label>
@@ -54,20 +50,20 @@ const AddCard = ({ isOpen, onClose, onAddCard }) => {
           <textarea
             value={back}
             onChange={(e) => setBack(e.target.value)}
-            rows={6} 
-            cols={50} 
-            style={{ resize: 'none' }}
+            rows={6}
+            cols={50}
+            style={{ resize: "none" }}
             required
           />
         </label>
         <label>
           Status:
           <div className="select-container">
-          <select value={status} onChange={(e) => setStatus(e.target.value)}>
-            <option value="Want to Learn">Want to Learn</option>
-            <option value="Learned">Learned</option>
-            <option value="Noted">Noted</option>
-          </select>
+            <select value={status} onChange={(e) => setStatus(e.target.value)}>
+              <option value="Want to Learn">Want to Learn</option>
+              <option value="Learned">Learned</option>
+              <option value="Noted">Noted</option>
+            </select>
           </div>
         </label>
         <div className="button-container">
