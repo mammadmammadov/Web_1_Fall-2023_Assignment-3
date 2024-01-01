@@ -50,9 +50,9 @@
       "status": "Want to Learn"
     },
     {
-      "front": "yeni kart on",
+      "front": "yeni kart ",
       "back": "yeni kart arxa",
-      "lastModified": "2023-12-31T10:13:27.432Z",
+      "lastModified": "2023-12-31T14:37:23.679Z",
       "status": "Want to Learn",
       "id": 17
     },
@@ -62,6 +62,69 @@
       "lastModified": "2023-12-31T12:05:41.484Z",
       "status": "Want to Learn",
       "id": 18
+    },
+    {
+      "front": "dsdkdk",
+      "back": "djjkdksj",
+      "lastModified": "2023-12-31T15:00:35.146Z",
+      "status": "Want to Learn",
+      "id": 19
+    },
+    {
+      "id": 20,
+      "front": "djdsjksdjk",
+      "back": "dlsdksdk",
+      "lastModified": "2023-12-31T15:00:47.911Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 21,
+      "front": "asksak",
+      "back": "sksakska",
+      "lastModified": "2023-12-31T15:00:54.957Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 22,
+      "front": "sksaksak",
+      "back": "sksaksk",
+      "lastModified": "2023-12-31T15:01:02.058Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 23,
+      "front": "skasksk",
+      "back": "dlldls",
+      "lastModified": "2023-12-31T15:01:09.427Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 24,
+      "front": "aksksak",
+      "back": ",,",
+      "lastModified": "2023-12-31T15:01:15.802Z",
+      "status": "Want to Learn"
+    },
+    {
+      "front": "1",
+      "back": "2",
+      "lastModified": "2023-12-31T15:04:25.617Z",
+      "status": "Want to Learn",
+      "id": 25
+    },
+    {
+      "id": 26,
+      "front": "34",
+      "back": "4",
+      "lastModified": "2023-12-31T15:04:38.523Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 28,
+      "front": "777",
+      "back": "888",
+      "lastModified": "2023-12-31T15:04:50.907Z",
+      "status": "Want to Learn"
     }
   ]
 }

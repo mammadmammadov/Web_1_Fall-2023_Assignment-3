@@ -17,29 +17,12 @@ function FlashcardPage() {
   const [cardAdded, setCardAdded] = useState(false);
   const [editingCard, setEditingCard] = useState(null);
 
+  const [displayedCards, setDisplayedCards] = useState(7);
 
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4;
-
-  const [hasMore, setHasMore] = useState(true);
-  const [page, setPage] = useState(1);
-
-  const fetchFlashcards = async () => {
-    try {
-      const startIndex = (currentPage - 1) * itemsPerPage;
-      const response = await fetch(`http://localhost:3001/flashcards?_start=${startIndex}&_end=${startIndex + itemsPerPage}`);
-      const newData = await response.json();
-  
-      if (newData.length === 0) {
-        setHasMore(false);
-      } else {
-        setFlashCards((prevData) => [...prevData, ...newData]);
-      }
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      // Handle error appropriately (e.g., show error message to the user)
-    }
+  const fetchMoreData = () => {
+    setTimeout(() => {
+      setDisplayedCards((prev) => prev + 7);
+    }, 1000); // Add a delay to simulate async data fetching
   };
 
   useEffect(() => {
@@ -55,8 +38,6 @@ function FlashcardPage() {
         console.error("Error while fetching flashcards", error)
       );
   }, []);
-
- 
 
   const handleAddCard = async (newCard) => {
     try {
@@ -179,7 +160,7 @@ function FlashcardPage() {
   // The [cardAdded] dependency array above ensures us that the effect runs whenever the cardAdded state happens
   // It solved the delete problem of newly added cards in my case
 
-  const sortedAndFilteredFlashcards = flashcards
+  const sortedAndFilteredFlashcards = flashcards.slice(0, displayedCards)
     .filter((card) => {
       const filterCondition =
         filterStatus === "All" ? true : card.status === filterStatus;
@@ -232,23 +213,19 @@ function FlashcardPage() {
         )}
       </div>
 
-
-
       {sortedAndFilteredFlashcards.length > 0 ? (
-
         <InfiniteScroll
-      dataLength={flashcards.length}
-      next={fetchFlashcards}
-      hasMore={true} // Set this to false when there are no more items to load
-      loader={<p>Loading...</p>}
-    >
+            dataLength={sortedAndFilteredFlashcards.length}
+            next={fetchMoreData}
+            hasMore={sortedAndFilteredFlashcards.length<flashcards.length}
+            loader={<br></br>}
+          >
         <div className="cards-list">
-          {sortedAndFilteredFlashcards.map(createCard)}
-          {loading && <p>Loading...</p>}
-        </div>
 
+            {sortedAndFilteredFlashcards.map(createCard)}
+          
+        </div>
         </InfiniteScroll>
-        
       ) : (
         <h2 className="no-element">No card found</h2>
       )}

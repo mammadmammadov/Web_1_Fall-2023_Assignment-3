@@ -9,6 +9,7 @@ p {
 .grid-container {
   margin: 0 auto;
   padding: 20px;
+  height: 100vh;
 }
 
 .cards-list {
