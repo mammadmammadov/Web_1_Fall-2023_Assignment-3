@@ -1,4 +1,4 @@
-import "../assets/AddCard.css";
+import "../assets/EditFlashCards.css";
 import React, { useState } from "react";
 
 const EditForm = ({ initialData, onSave, onCancel }) => {
@@ -19,7 +19,7 @@ const EditForm = ({ initialData, onSave, onCancel }) => {
 
   return (
     <div className={`open`}>
-      <div className="modal-content">
+      <div className="popup-content">
         <div className="edit-form">
           <label>
             Front:

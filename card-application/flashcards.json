@@ -279,69 +279,6 @@
       "back": "A skew-symmetric (or antisymmetric) matrix is a square matrix whose transpose is equal to its negative. In other words, A matrix A is skew-symmetric if A^T = -A.",
       "lastModified": "2023-12-21T12:30:45.789Z",
       "status": "Want to Learn"
-    },
-    {
-      "front": "front1",
-      "back": "back1",
-      "lastModified": "2024-01-01T17:44:39.040Z",
-      "status": "Want to Learn",
-      "id": 41
-    },
-    {
-      "front": "front2",
-      "back": "back2",
-      "lastModified": "2024-01-01T17:48:13.355Z",
-      "status": "Want to Learn",
-      "id": 42
-    },
-    {
-      "id": 43,
-      "front": "front3",
-      "back": "back3",
-      "lastModified": "2024-01-01T17:48:26.318Z",
-      "status": "Want to Learn"
-    },
-    {
-      "front": "front4",
-      "back": "back4",
-      "lastModified": "2024-01-01T17:49:31.651Z",
-      "status": "Want to Learn",
-      "id": 44
-    },
-    {
-      "id": 45,
-      "front": "front5",
-      "back": "back5",
-      "lastModified": "2024-01-01T17:50:16.037Z",
-      "status": "Want to Learn"
-    },
-    {
-      "id": 46,
-      "front": "front6",
-      "back": "back6",
-      "lastModified": "2024-01-01T17:50:31.836Z",
-      "status": "Want to Learn"
-    },
-    {
-      "id": 47,
-      "front": "front7",
-      "back": "back7",
-      "lastModified": "2024-01-01T17:50:47.067Z",
-      "status": "Want to Learn"
-    },
-    {
-      "id": 48,
-      "front": "learned1",
-      "back": "learned2",
-      "lastModified": "2024-01-01T18:05:21.057Z",
-      "status": "Learned"
-    },
-    {
-      "id": 49,
-      "front": "learned2",
-      "back": "learned2",
-      "lastModified": "2024-01-01T18:05:07.775Z",
-      "status": "Learned"
     }
   ]
 }

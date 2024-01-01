@@ -1,18 +1,14 @@
 .edit-popup-overlay {
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 98;
-  display: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  z-index: 1000;
 }
-
-.edit-popup-overlay.active {
-  display: block;
-}
-
 .edit-popup {
   position: fixed;
   top: 50%;
@@ -21,17 +17,23 @@
   background-color: #fff;
   padding: 20px;
   border: 1px solid #ccc;
-  z-index: 97;
+  z-index: 990;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   max-width: 400px;
   width: 100%;
   transition: transform 0.3s ease-in-out;
-  display: none;
+  display: flex;
+  z-index: 1001;
+}
+
+.edit-popup-overlay.active {
+  display: block;
 }
 
 .edit-popup.active {
   display: block;
+  pointer-events: auto;
 }
 
 h2 {
