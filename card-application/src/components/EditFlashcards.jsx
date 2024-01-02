@@ -1,12 +1,9 @@
-
 import React, { useState } from "react";
 import "../assets/EditFlashcards.css";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 function EditFlashcards({ card, onSave, onCancel, isActive }) {
   const [editedCard, setEditedCard] = useState({ ...card });
-
-
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -18,11 +15,13 @@ function EditFlashcards({ card, onSave, onCancel, isActive }) {
   };
 
   const handleSave = () => {
-    
     for (const key in editedCard) {
-      if ((key==='front'||key=='back')&&editedCard[key].trim() === '') {
+      if (
+        (key === "front" || key === "back") &&
+        editedCard[key].trim() === ""
+      ) {
         Swal.fire(`Please fill-in the ${key} field`);
-        return; 
+        return;
       }
     }
     onSave(editedCard);
@@ -35,17 +34,22 @@ function EditFlashcards({ card, onSave, onCancel, isActive }) {
         onClick={onCancel}
       ></div>
       <div className={`edit-popup ${isActive ? "active" : ""}`}>
-        <h2>Edit Flashcard</h2>
+        <h2 class="edit-h2">Edit Flashcard</h2>
         <label htmlFor="front">Front:</label>
-        <input
-          type="text"
+        <textarea
+          rows={7}
+          cols={51}
+          style={{ resize: "none" }}
           id="front"
           name="front"
           value={editedCard.front}
           onChange={handleInputChange}
         />
         <label htmlFor="back">Back:</label>
-        <input
+        <textarea
+          rows={7}
+          cols={51}
+          style={{ resize: "none" }}
           type="text"
           id="back"
           name="back"

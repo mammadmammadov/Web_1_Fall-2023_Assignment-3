@@ -11,7 +11,7 @@ const AddCard = ({ isOpen, onClose, onAddCard }) => {
 
   const handleAddCard = () => {
     if (!front || !back || !status) {
-      Swal.fire("Please fill in all fields.");
+      Swal.fire("Please fill-in all fields 🫠");
       return;
     }
 
@@ -34,13 +34,14 @@ const AddCard = ({ isOpen, onClose, onAddCard }) => {
   return (
     <div className={`popup ${isOpen ? "open" : "closed"}`}>
       <div className="popup-content">
+      <h2 class="add-h2">Add Flashcard</h2>
         <label>
           Front:
           <textarea
             value={front}
             onChange={(e) => setFront(e.target.value)}
-            rows={6}
-            cols={50}
+            rows={7}
+            cols={48}
             style={{ resize: "none" }}
             required
           />
@@ -50,8 +51,8 @@ const AddCard = ({ isOpen, onClose, onAddCard }) => {
           <textarea
             value={back}
             onChange={(e) => setBack(e.target.value)}
-            rows={6}
-            cols={50}
+            rows={7}
+            cols={48}
             style={{ resize: "none" }}
             required
           />

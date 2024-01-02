@@ -2,9 +2,9 @@
   "flashcards": [
     {
       "id": 1,
-      "front": "What is a vector in linear algebra?",
+      "front": "What is a vector in linear algebra??",
       "back": "A vector is an ordered list of numbers and is often used to represent points in space or directions.",
-      "lastModified": "2024-01-01T19:17:56.148Z",
+      "lastModified": "2024-01-01T21:26:14.703Z",
       "status": "Noted"
     },
     {
@@ -226,17 +226,17 @@
     },
     {
       "id": 33,
-      "front": "Explain the geometric interpretation of the determinant of a 2x2 matrix.",
-      "back": "The determinant of a 2x2 matrix [a, b; c, d] represents the signed area of the parallelogram formed by the column vectors [a, c] and [b, d]. It is positive if the vectors form a counterclockwise orientation and negative if they form a clockwise orientation.",
-      "lastModified": "2023-12-21T10:45:00.456Z",
-      "status": "Want to Learn"
+      "front": "Explain the geometric interpretation of the determinant of a 2x2 matrix./",
+      "back": "The determinant of a 2x2 matrix [a, b; c, d] represents the signed area of the parallelogram formed by the column vectors [a, c] and [b, d].",
+      "lastModified": "2024-01-02T11:42:52.775Z",
+      "status": "Learned"
     },
     {
       "id": 34,
       "front": "Define the concept of a linearly dependent set of vectors.",
       "back": "A set of vectors is linearly dependent if at least one vector in the set can be expressed as a linear combination of the others. In other words, there exist coefficients, not all zero, such that the linear combination equals zero.",
-      "lastModified": "2023-12-21T11:00:15.789Z",
-      "status": "Want to Learn"
+      "lastModified": "2024-01-02T11:50:09.253Z",
+      "status": "Learned"
     },
     {
       "id": 35,
@@ -279,6 +279,41 @@
       "back": "A skew-symmetric (or antisymmetric) matrix is a square matrix whose transpose is equal to its negative. In other words, A matrix A is skew-symmetric if A^T = -A.",
       "lastModified": "2023-12-21T12:30:45.789Z",
       "status": "Want to Learn"
+    },
+    {
+      "front": "front",
+      "back": "back",
+      "lastModified": "2024-01-02T07:31:26.379Z",
+      "status": "Learned",
+      "id": 41
+    },
+    {
+      "front": "h1",
+      "back": "h1",
+      "lastModified": "2024-01-02T11:13:54.499Z",
+      "status": "Want to Learn",
+      "id": 43
+    },
+    {
+      "id": 45,
+      "front": "h3",
+      "back": "h3",
+      "lastModified": "2024-01-02T11:44:31.825Z",
+      "status": "Want to Learn"
+    },
+    {
+      "id": 46,
+      "front": "h4",
+      "back": "h4",
+      "lastModified": "2024-01-02T11:18:45.397Z",
+      "status": "Want to Learn"
+    },
+    {
+      "front": "m",
+      "back": "m",
+      "lastModified": "2024-01-02T11:44:47.282Z",
+      "status": "Noted",
+      "id": 47
     }
   ]
 }

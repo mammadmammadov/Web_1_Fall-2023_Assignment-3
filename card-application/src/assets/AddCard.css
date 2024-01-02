@@ -75,3 +75,7 @@ button:hover {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.add-h2{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}

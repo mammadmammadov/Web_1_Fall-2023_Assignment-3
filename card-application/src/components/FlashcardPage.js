@@ -11,7 +11,7 @@ import "../assets/App.css";
 import ShareCards from "./ShareCards";
 
 function FlashcardPage() {
-  const [flashcards, setFlashCards] = useState([]);
+  const [flashcards, setFlashcards] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState("All");
   const [sortOption, setSortOption] = useState("lastModified");
@@ -35,7 +35,7 @@ function FlashcardPage() {
           (date1, date2) =>
             new Date(date2.lastModified) - new Date(date1.lastModified)
         );
-        setFlashCards(sortedFlashcards);
+        setFlashcards(sortedFlashcards);
       })
       .catch((error) =>
         console.error("Error while fetching flashcards", error)
@@ -61,7 +61,7 @@ function FlashcardPage() {
         throw new Error("Failed to add card");
       }
 
-      setFlashCards([...flashcards, card]);
+      setFlashcards([...flashcards, card]);
 
       setNewCard(false);
 
@@ -89,11 +89,10 @@ function FlashcardPage() {
   };
 
   const deleteFlashcard = (id) => {
-    console.log("Deleting flashcard. ID:", id);
 
     const remainingFlashcards = flashcards.filter((card) => card.id !== id);
 
-    setFlashCards(remainingFlashcards);
+    setFlashcards(remainingFlashcards);
 
     fetch(`http://localhost:3001/flashcards/${id}`, {
       method: "DELETE",
@@ -119,8 +118,8 @@ function FlashcardPage() {
 
   const saveChanges = async (editedCard) => {
     try {
-      setFlashCards((prevFlashcardsData) =>
-        prevFlashcardsData.map((card) =>
+      setFlashcards((prevFlashcards) =>
+        prevFlashcards.map((card) =>
           card.id === editedCard.id ? editedCard : card
         )
       );
@@ -146,11 +145,9 @@ function FlashcardPage() {
     }
   };
 
-  const url = `http://localhost:3001/flashcards`;
-
   useEffect(() => {
     if (cardAdded) {
-      fetch(url)
+      fetch(`http://localhost:3001/flashcards`)
         .then((res) => {
           if (!res.ok) {
             throw new Error(`Connection error! Status: ${res.status}`);
@@ -159,7 +156,7 @@ function FlashcardPage() {
           }
         })
         .then((data) => {
-          setFlashCards(data);
+          setFlashcards(data);
           setCardAdded(false);
         })
         .catch((error) => console.error("Error fetching data: ", error));
@@ -169,7 +166,7 @@ function FlashcardPage() {
   // The [cardAdded] dependency array above ensures us that the effect runs whenever the cardAdded state happens
   // It solved the delete problem of newly added cards in my case
 
-  const sortedAndFilteredFlashcards = flashcards
+  const searchedFilteredSortedFlashcards = flashcards
     .filter((card) => {
       const filterCondition =
         filterStatus === "All" ? true : card.status === filterStatus;
@@ -221,12 +218,12 @@ function FlashcardPage() {
 
         <ShareCards
           selectedFlashcards={selectedFlashcards}
-          flashcards={sortedAndFilteredFlashcards}
+          flashcards={searchedFilteredSortedFlashcards}
         />
 
         {editingCard && (
           <EditFlashcards
-            card={sortedAndFilteredFlashcards.find(
+            card={searchedFilteredSortedFlashcards.find(
               (card) => card.id === editingCard
             )}
             onSave={saveChanges}
@@ -236,15 +233,15 @@ function FlashcardPage() {
         )}
       </div>
 
-      {sortedAndFilteredFlashcards.length > 0 ? (
+      {searchedFilteredSortedFlashcards.length > 0 ? (
         <InfiniteScroll
-          dataLength={sortedAndFilteredFlashcards.length}
+          dataLength={searchedFilteredSortedFlashcards.length}
           next={fetchMoreData}
-          hasMore={sortedAndFilteredFlashcards.length < flashcards.length}
+          hasMore={searchedFilteredSortedFlashcards.length < flashcards.length}
           loader={<br></br>}
         >
           <div className="cards-list">
-            {sortedAndFilteredFlashcards.map(createCard)}
+            {searchedFilteredSortedFlashcards.map(createCard)}
           </div>
         </InfiniteScroll>
       ) : (
