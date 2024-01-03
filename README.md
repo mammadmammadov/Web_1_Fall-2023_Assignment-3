@@ -13,7 +13,7 @@ Make sure that you have [Node.js](https://nodejs.org/en/download) installed on y
 1. Clone this repository: `git clone https://github.com/mammadmammadov/Web_1_Fall-2023_Assignment-3.git` or download as a ZIP file
 2. Load up the project in your editor of choice
 3. Navigate to the project directory: `cd card-application`
-4. Open a new terminal, change directory by typing `cd card-application` and install dependencies by typing `npm install`
+4. Install dependencies by typing `npm install`
 5. Type `json-server flashcards.json --port 3001` to start JSON server for flashcards
 6. Open a new terminal, change directory by typing `cd card-application` and type `json-server messages.json --port 3002` to start JSON server for messages
 7. Open a new terminal, change directory by typing `cd card-application` and type `npm start` to run the application
