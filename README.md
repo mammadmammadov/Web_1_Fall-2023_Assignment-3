@@ -8,7 +8,7 @@
 
 ### Installation
 
-Make sure that you have [Node.js](https://nodejs.org/en/download) installed on you machine before you follow the steps below.
+Make sure that you have [Node.js](https://nodejs.org/en/download) installed on your machine before you follow the steps below.
 
 1. Clone this repository: `git clone https://github.com/mammadmammadov/Web_1_Fall-2023_Assignment-3.git` or download as a ZIP file
 2. Load up the project in your editor of choice
