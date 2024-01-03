@@ -31,7 +31,7 @@ function ContactForm() {
         body: JSON.stringify(formData),
       });
       if (res.ok) {
-        Swal.fire("Mail is successfuly sent to local storage 😊");
+        Swal.fire("Mail is successfuly sent to local storage");
         console.log("Message sent successfully:", formData);
         setFormData({
           id: "",

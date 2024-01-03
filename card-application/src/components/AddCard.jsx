@@ -11,7 +11,7 @@ const AddCard = ({ isOpen, onClose, onAddCard }) => {
 
   const handleAddCard = () => {
     if (!front || !back || !status) {
-      Swal.fire("Please fill-in all fields 🫠");
+      Swal.fire("Please fill-in all fields");
       return;
     }
 

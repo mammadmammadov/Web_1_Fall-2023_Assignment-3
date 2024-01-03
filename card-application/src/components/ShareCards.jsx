@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 const ShareCards = ({ selectedFlashcards, flashcards }) => {
   const handleShare = () => {
     if (selectedFlashcards.length === 0) {
-      Swal.fire("Please select at least one card 🫠");
+      Swal.fire("Please select at least one card");
       return;
     }
     const selectedCardDetails = selectedFlashcards
