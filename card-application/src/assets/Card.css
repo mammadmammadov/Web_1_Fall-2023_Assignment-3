@@ -6,6 +6,11 @@
   transition: transform 0.3s;
   transform-style: preserve-3d;
   height: 200px;
+  margin-top: 15%;
+}
+
+.card-buttons{
+  position: sticky;
 }
 
 .card-front,
@@ -66,6 +71,8 @@
   height: 64px;
 }
 
+
+
 .card-item:hover .card-buttons {
   opacity: 1;
 }
@@ -121,3 +128,8 @@
   background-color: #ddd;
   border-color: #555;
 }
+
+.edit-button, .delete-button{
+  background-color: #008000;
+}
+

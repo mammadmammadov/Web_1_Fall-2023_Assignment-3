@@ -6,7 +6,7 @@ function Project(props) {
     <li className="project-item">
       <h3>{props.title}</h3>
       <p>{props.description}</p>
-      <a href={props.link} target="_blank" rel="noreferrer">
+      <a className="view-project" href={props.link} target="_blank">
         View Project
       </a>
     </li>

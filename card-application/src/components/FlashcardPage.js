@@ -15,7 +15,7 @@ function FlashcardPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState("All");
   const [sortOption, setSortOption] = useState("lastModified");
-  const [newCard, setNewCard] = useState(false);
+  const [newCardOpen, setNewCardOpen] = useState(false);
   const [cardAdded, setCardAdded] = useState(false);
   const [editingCard, setEditingCard] = useState(null);
   const [displayedCards, setDisplayedCards] = useState(7);
@@ -63,7 +63,7 @@ function FlashcardPage() {
 
       setFlashcards([...flashcards, card]);
 
-      setNewCard(false);
+      setNewCardOpen(false);
 
       setCardAdded(true);
     } catch (error) {
@@ -111,7 +111,6 @@ function FlashcardPage() {
   const startEditing = (id) => {
     setEditingCard(id);
   };
-
   const cancelEdit = () => {
     setEditingCard(null);
   };
@@ -134,7 +133,6 @@ function FlashcardPage() {
           body: JSON.stringify(editedCard),
         }
       );
-
       if (!response.ok) {
         console.error("Failed to update flashcard on the server.");
       }
@@ -174,8 +172,9 @@ function FlashcardPage() {
     })
     .filter(
       (card) =>
-        card.front.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        card.back.toLowerCase().includes(searchTerm.toLowerCase())
+        card.front.toLowerCase().trim().includes(searchTerm.toLowerCase().trim()) ||
+        card.back.toLowerCase().trim().includes(searchTerm.toLowerCase().trim()) ||
+        card.status.toLowerCase().trim().includes(searchTerm.toLowerCase().trim())
     )
     .sort((a, b) => {
       const comparator =
@@ -206,13 +205,13 @@ function FlashcardPage() {
         />
         <SortMenu sortOption={sortOption} onSortChange={setSortOption} />
 
-        <button className="add" onClick={() => setNewCard(true)}>
+        <button className="add" onClick={() => setNewCardOpen(true)}>
           󠀫󠀫+
         </button>
 
         <AddCard
-          isOpen={newCard}
-          onClose={() => setNewCard(false)}
+          isOpen={newCardOpen}
+          onClose={() => setNewCardOpen(false)}
           onAddCard={handleAddCard}
         />
 

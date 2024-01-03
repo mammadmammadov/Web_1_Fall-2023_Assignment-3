@@ -48,11 +48,13 @@ function Card({
   };
 
   const statusStyle = {
+    color:"#28231d",
     marginTop: "2%",
     fontSize: "large",
   };
 
   const timeStyle = {
+    color:"#05092d",
     marginTop: "5%",
   };
 

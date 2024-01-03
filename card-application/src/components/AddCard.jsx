@@ -69,7 +69,7 @@ const AddCard = ({ isOpen, onClose, onAddCard }) => {
         </label>
         <div className="button-container">
           <button onClick={handleAddCard}>Add Card</button>
-          <button onClick={onClose}>Close</button>
+          <button className="close-button" onClick={onClose}>Close</button>
         </div>
       </div>
     </div>

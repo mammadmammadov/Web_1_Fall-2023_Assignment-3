@@ -28,7 +28,7 @@
 }
 
 .popup button {
-  background-color: #5cb85c;
+  background-color: #008000;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -39,6 +39,16 @@
 button:hover {
   background-color: #45a049;
   color: wheat;
+}
+
+.button-container .close-button{
+  color:red;
+  background-color: wheat;
+}
+
+.button-container .close-button:hover{
+  color: wheat;
+  background-color: crimson;
 }
 
 .popup textarea {
@@ -76,6 +86,6 @@ button:hover {
   border-radius: 4px;
 }
 
-.add-h2{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+.add-h2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

@@ -7,8 +7,7 @@ const ShareCards = ({ selectedFlashcards, flashcards }) => {
       return;
     }
     const selectedCardDetails = selectedFlashcards
-      .map((id) => flashcards.find((card) => card.id === id))
-      .filter((card) => card);
+      .map((id) => flashcards.find((card) => card.id === id));
 
     const emailBody = JSON.stringify(selectedCardDetails, null, 2);
 

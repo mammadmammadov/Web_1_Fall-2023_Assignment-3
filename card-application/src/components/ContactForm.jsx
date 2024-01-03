@@ -17,15 +17,12 @@ function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     for (const key in formData) {
       if (key !== "id" && formData[key].trim() === "") {
         Swal.fire(`Please fill-in the ${key} field`);
         return;
       }
-    }
-
-    try {
+    } try {
       const res = await fetch("http://localhost:3002/messages", {
         method: "POST",
         headers: {
@@ -33,11 +30,9 @@ function ContactForm() {
         },
         body: JSON.stringify(formData),
       });
-
       if (res.ok) {
         Swal.fire("Mail is successfuly sent to local storage 😊");
         console.log("Message sent successfully:", formData);
-
         setFormData({
           id: "",
           subject: "",
@@ -45,10 +40,10 @@ function ContactForm() {
           content: "",
         });
       } else {
-        console.error("Error sending message:", res.statusText);
+        Swal.fire("Error sending message:", res.statusText);
       }
     } catch (error) {
-      console.error("Error sending message:", error);
+      Swal.fire("Error sending message", error.message);
     }
   };
 

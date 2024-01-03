@@ -89,3 +89,16 @@ select {
 .edit-h2{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.save-button{
+  background-color: green;
+}
+
+.cancel-button{
+  color:red;
+  background-color: wheat;
+}
+
+.cancel-button:hover{
+  background-color: crimson;
+}

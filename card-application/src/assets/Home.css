@@ -73,3 +73,21 @@ h1 {
 .about-me:hover {
   --_p: 100%;
 }
+
+.view-project{
+  font-size: 1.1rem;
+  font-family: "Comic Sans MS", cursive;
+  margin-left: 5%;
+  margin-right: 5%;
+  --s: 0.1em;
+  --c: #542a2c;
+
+  color: #0000;
+  padding-bottom: var(--s);
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+}
+
+.view-project:hover {
+  --_p: 100%;
+}

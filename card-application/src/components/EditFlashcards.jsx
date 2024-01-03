@@ -6,6 +6,7 @@ function EditFlashcards({ card, onSave, onCancel, isActive }) {
   const [editedCard, setEditedCard] = useState({ ...card });
 
   const handleInputChange = (event) => {
+    console.log(event.target);
     const { name, value } = event.target;
     setEditedCard((prevCard) => ({
       ...prevCard,
@@ -28,11 +29,7 @@ function EditFlashcards({ card, onSave, onCancel, isActive }) {
   };
 
   return (
-    <div>
-      <div
-        className={`edit-popup-overlay ${isActive ? "active" : ""}`}
-        onClick={onCancel}
-      ></div>
+    <div className={`edit-popup-overlay ${isActive ? "active" : ""}`}>
       <div className={`edit-popup ${isActive ? "active" : ""}`}>
         <h2 class="edit-h2">Edit Flashcard</h2>
         <label htmlFor="front">Front:</label>
@@ -68,8 +65,8 @@ function EditFlashcards({ card, onSave, onCancel, isActive }) {
           <option value="Noted">Noted</option>
         </select>
         <div className="edit-buttons">
-          <button onClick={handleSave}>Save Changes</button>
-          <button onClick={onCancel}>Cancel</button>
+          <button className="save-button" onClick={handleSave}>Save</button>
+          <button className="cancel-button" onClick={onCancel}>Cancel</button>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/Home.css";
 import Project from "./Project";
-import projectList from "./ProjectList";
+import ProjectList from "../ProjectList";
 
 function createProject(project) {
   return (
@@ -26,7 +26,7 @@ function Home() {
         and Machine Learning.
       </p>
 
-      <ul className="projects-list">{projectList.map(createProject)}</ul>
+      <ul className="projects-list">{ProjectList.map(createProject)}</ul>
     </div>
   );
 }

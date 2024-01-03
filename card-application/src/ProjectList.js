@@ -1,4 +1,4 @@
-const projectList = [
+const ProjectList = [
   {
     id: 1,
     title: "Dummy Bazaar 🛒",
@@ -49,4 +49,4 @@ const projectList = [
     }
   ];
 
-export default projectList;
+export default ProjectList;
