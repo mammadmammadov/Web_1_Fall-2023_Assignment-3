@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Web_1_Fall-2023_Assignment-3/build/static/css/main.321f676e.css",
-    "main.js": "/Web_1_Fall-2023_Assignment-3/build/static/js/main.1f980ee6.js",
-    "index.html": "/Web_1_Fall-2023_Assignment-3/build/index.html",
-    "main.321f676e.css.map": "/Web_1_Fall-2023_Assignment-3/build/static/css/main.321f676e.css.map",
-    "main.1f980ee6.js.map": "/Web_1_Fall-2023_Assignment-3/build/static/js/main.1f980ee6.js.map"
+    "main.css": "/Web_1_Fall-2023_Assignment-3/static/css/main.321f676e.css",
+    "main.js": "/Web_1_Fall-2023_Assignment-3/static/js/main.1f980ee6.js",
+    "index.html": "/Web_1_Fall-2023_Assignment-3/index.html",
+    "main.321f676e.css.map": "/Web_1_Fall-2023_Assignment-3/static/css/main.321f676e.css.map",
+    "main.1f980ee6.js.map": "/Web_1_Fall-2023_Assignment-3/static/js/main.1f980ee6.js.map"
   },
   "entrypoints": [
     "static/css/main.321f676e.css",
